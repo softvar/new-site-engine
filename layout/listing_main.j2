@@ -1,0 +1,17 @@
+{% extends "base.j2" %}
+{% from "macros.j2" import render_excerpt with context  %}
+{% block main %}
+<!-- {% block page_title %}<h1 class="title">{{ resource.meta.title }}</h1>{% endblock %} -->
+
+<ul class="listing clear">
+{% set i=1 %}
+{% for res in resource.node.walk_resources_sorted_by_time() %}
+{% if i<5 %}
+<li>
+    {{ render_excerpt(res) }}
+</li>
+{% endif %}
+{% set i=i+1 %}
+{% endfor %}
+</ul>
+{% endblock %}
