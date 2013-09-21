@@ -1,0 +1,117 @@
+{% extends "base.j2" %}
+
+{% block endhead %}
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "55b8e55f-c372-44dc-97ec-e52d867891fd", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+{% endblock endhead %}
+
+{% block jquery -%}
+<script type="text/javascript">
+    $(function () {
+            $.scrollUp({
+                scrollName: 'scrollUp', // Element ID
+                scrollDistance: 300, // Distance from top/bottom before showing element (px)
+                scrollFrom: 'top', // 'top' or 'bottom'
+                scrollSpeed: 300, // Speed back to top (ms)
+                easingType: 'linear', // Scroll to top easing (see http://easings.net/)
+                animation: 'fade', // Fade, slide, none
+                animationInSpeed: 200, // Animation in speed (ms)
+                animationOutSpeed: 200, // Animation out speed (ms)
+                scrollText: '', // Text for element, can contain HTML
+                scrollTitle: false, // Set a custom <a> title if required. Defaults to scrollText
+                scrollImg: false, // Set true to use image
+                activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+                zIndex: 2147483647 // Z-Index for the overlay
+            });
+        });
+  </script>
+{% endblock jquery %}
+
+{% block main -%}
+<article class="post">
+<nav class="post_nav">
+<a class="backlink" href="{{ content_url(resource.node.url) }}">Back to list</a>
+<a class="prev{{' disabled' if not resource.prev_by_time }}"
+    title="{{ resource.prev_by_time.meta.title }}"
+    {% if resource.prev_by_time %}
+    href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>
+    Previous
+</a>
+
+<a class="next{{' disabled' if not resource.next_by_time }}"
+    title="{{ resource.next_by_time.meta.title }}"
+    {% if resource.next_by_time %}
+    href="{{ content_url(resource.next_by_time.url) }}"{% endif %}>
+    Next
+</a>
+
+<br>
+<div id="twitter_share">
+<a href="http://twitter.com/share"
+    class="twitter-share-button"
+    data-count="vertical"
+    data-via="{{ tweet_via }}">Tweet</a>
+    <script type="text/javascript"
+        src="http://platform.twitter.com/widgets.js"></script>
+</div>
+<div id="facebook_like">
+<iframe src="http://www.facebook.com/plugins/like.php?href=&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
+            scrolling="no"
+            frameborder="0"
+            style="border:none; overflow:hidden; width:450px; height:65px;"
+            allowTransparency="true"></iframe>
+</div>
+</nav>
+<h1 class="title">
+    <a href="{{ content_url(resource.url) }}">
+        {{ resource.meta.title }}
+    </a>
+</h1>
+<time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
+    Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
+</time>
+
+{% if resource.meta.tags %}
+<ul class="tags clear">
+{% for tag in resource.meta.tags %}
+<li>
+    <a class="small" href="{{ content_url('blog/tags/'~tag~'.html') }}">
+        {{ tag }}
+    </a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% filter markdown|typogrify -%}
+{% mark post -%}
+{% block post -%}{%- endblock %}
+{%- endmark %}
+{%- endfilter %}
+
+
+
+          <div class="social-me">
+            <div class="classysocial right" data-orientation="arc" data-gap="40%" data-arc-length="360" data-image-type="facebook" data-picture="varun.malhotra.92" data-facebook-handle="varun.malhotra.92" data-twitter-handle="s0ftvar" data-email-handle="varun2902@gmail.com" data-google-handle="/u/0/106077260576214381662/posts" data-github-handle="softvar" data-networks="facebook,twitter,email,github,google"></div>
+          </div>
+</br>
+
+{% block sharethis %}
+<div class="shareblog">
+<span class='st_facebook_hcount' displayText='Facebook'></span>
+<span class='st_twitter_hcount' displayText='Tweet'></span>
+<span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+<span class='st_googleplus_hcount' displayText='Google +'></span>
+<span class='st_pinterest_hcount' displayText='Pinterest'></span>
+</div>
+
+{% endblock sharethis %}
+{% block disqus %}
+<div class="hi">
+{% include "disqus.j2" %}
+</div>
+{% endblock disqus %}
+
+</article>
+
+{%- endblock %}
+
