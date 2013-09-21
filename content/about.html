@@ -1,0 +1,56 @@
+---
+extends: base.j2
+
+title: LAB - about.me
+description: It's about me
+---
+
+ {% block css %}
+
+  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/base.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+   <link rel="stylesheet" href="{{ media_url('css/jquery.classysocial.css') }}" />
+  
+{% endblock css %}
+
+{% block main %}
+<div class="about_me">
+<h1 >Hi, </h1>
+
+<p>I figure, if you clicked the About link, you probably want to know a little more than my passion for tech. So here it goes.</p></br>
+
+<p>I'm a Computer Science undergratuate in Delhi, India. I enjoy taking problems and turning them into simple and beautiful interface designs. I <span style="color:red">&lt;3</span> programming and always strive for the newest technologies.</p></br>
+
+<p>Apart from being a techie geek, you'll find me either on the playing courts or in the gym.</p></br>
+
+<div class="social-me">
+           <div class="classysocial right" data-orientation="arc" data-gap="40%" data-arc-length="360" data-image-type="facebook" data-picture="varun.malhotra.92" data-facebook-handle="varun.malhotra.92" data-twitter-handle="s0ftvar" data-email-handle="varun2902@gmail.com" data-google-handle="/u/0/106077260576214381662/posts" data-github-handle="softvar" data-networks="facebook,twitter,email,github,google"></div>
+</div></br></br>
+<span id="follow">Follow Me</span>
+</br>
+
+<h2>About this Site</h2>
+
+<p>This is HYDE generated static HTML site and each web page has been authored in Markdown to avoid hand-authoring HTML. This site uses template language simlar to that of the popular Django framework, implemented through the Jinja2 project for rendering HTML pages into static content. If you look at my weblogs, more than half of the HTML of each page is boilerplate replicated across all entries. A template allows me to express that 50 percent of content only once and have it automatically applied to all the pages.</p></br>
+
+<p>HYDE provides me beautiful Syntax Highlighting Plugin to post all my code-snippets in my weblogs according to the language's taste. It not only makes code-snippets more readable but also helps in understanding the main points being highlighted.</p></br>
+
+<p>In case you love to see the engine behind this site, have a look at my <a href="https://www.github.com/softvar">Github repo</a>.
+Contact me by dropping words at <a href="mailto:varun2902@gmail.com">varun2902@gmail.com</a> for a Hello :) or if you have any query.</p></br>
+
+<p>Cheers! </p></br>
+
+
+</div>
+
+
+
+{% endblock main %}
+
+{% block jquery %}
+  
+
+{% endblock jquery %}
+
