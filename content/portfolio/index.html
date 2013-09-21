@@ -1,0 +1,33 @@
+---
+extends: base.j2
+
+title: LAB - Projects
+description: Portfolio page in the BASIC hyde template
+---
+
+ {% block css %}
+
+  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/base.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+  
+  {% endblock css %}
+{% block main %}
+<div class="projects">
+		<div data-repo="softvar/simplegist" class="github-box-wrap"></div>
+		<div data-repo="softvar/fOS-Calculator" class="github-box-wrap"></div>
+		<div data-repo="softvar/fos-Gisthub" class="github-box-wrap"></div>
+		<div data-repo="softvar/pyShare" class="github-box-wrap"></div>
+		<div data-repo="softvar/dualpad" class="github-box-wrap"></div>
+
+	</div>
+{% endblock main %}
+
+{% block jquery %}
+	<script>
+		$("[data-repo]").github();
+	</script>
+
+{% endblock jquery %}
+
