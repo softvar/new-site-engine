@@ -5,6 +5,14 @@
 <script type="text/javascript">stLight.options({publisher: "55b8e55f-c372-44dc-97ec-e52d867891fd", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 {% endblock endhead %}
 
+{% block css %}
+  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/simple-sidebar.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/jquery.classysocial.css') }}" />
+  {% endblock css %}
+
+
 {% block jquery -%}
 <script type="text/javascript">
     $(function () {
@@ -26,6 +34,20 @@
         });
   </script>
 {% endblock jquery %}
+
+{% block navi %}
+<div id="nav-main">
+
+            <ul class="nav nav-pills">
+
+              <li><a href="{{ content_url('about.html') }}">About</a></li>
+              <li><a class="active" href="#">Archive</a></li>
+              <li><a href="{{ content_url('portfolio/') }}">Projects</a></li>
+              <li><a href="#">Walk-through</a></li>
+            </ul>
+            
+            </div>
+{% endblock %}
 
 {% block main -%}
 <article class="post">

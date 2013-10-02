@@ -367,7 +367,7 @@ footer{position:relative;
 #nav-main li a:hover {
   background: #fff;
   color: #3C3F3D;
-  border-bottom: 2px solid #146aba;
+  border-bottom: 2px solid #ed5e6f;
 
 }
 #nav-main li a.active {
@@ -639,7 +639,7 @@ h1.owner a{
     
 }
 h1.owner a:hover {
-    color: #212121;
+    color: #ed5e6f;
     text-decoration: none;
 }
 h2 {
@@ -832,7 +832,7 @@ a.backlink:hover, a.prev:hover, a.next:hover{
   margin-bottom: 8px;
   font-style: Verdana;
   word-wrap: break-word;
-  
+  color: #222222;
 }
 
 
