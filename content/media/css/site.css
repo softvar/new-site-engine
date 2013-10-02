@@ -7,12 +7,12 @@
 }
 
 ::selection {
-    background: #B2B2FF;
+    background: #95E5C5;
     color: black;
 }
 
 ::-moz-selection {
-    background: #B2B2FF;
+    background: #95E5C5;
     color: black;
 }
 
@@ -246,9 +246,8 @@ footer{position:relative;
 .banner h1{
     font-weight: 500;
     font-size: 42px;
-    
-    margin-top: 0px;
-    text-align: center;
+    margin-left: 50px;
+    margin-top: 50px;
     font-family: 'Arial',Arial,Helvetica,sans-serif;
     color: #33B773;
     color:#68D9DF;color:#000;
@@ -266,8 +265,9 @@ footer{position:relative;
 }
 
 .banner nav{
+    display: inline-block;
     margin-left: 28%;
-    top: 14px;
+    
     bottom: 0;
     text-align: center;
     
@@ -306,6 +306,78 @@ footer{position:relative;
     */
 }
 
+#nav-main {
+  margin-top: 50px;
+  margin-left: 300px;
+  text-align: center;
+  margin-right: 300px;  
+  border-top: 1px solid #DEDEDC;
+  border-bottom: 1px solid #DEDEDC;
+}
+#nav-main li{
+  
+  float: left;
+
+}
+#nav-main li a {
+  background: #fff;
+  color: #797F7A;
+  font-size: 27px;
+  margin-left:35px;
+  transition: all 0.5s ease 0.1s;
+  
+}
+
+#nav-main li a:hover {
+ 
+  color: #3C3F3D;
+  border-bottom: 2px solid #ed5e6f;
+
+}
+
+#nav-main li a.active {
+
+  color: #3C3F3D;
+  border-bottom: 2px solid #6BAF77;
+}
+
+@media (max-width:767px) {
+#nav-main {
+  margin-top: 50px;
+  margin-left: 50px;
+  text-align: center;
+  margin-right: 50px;  
+  border-top: 1px solid #DEDEDC;
+  border-bottom: 1px solid #DEDEDC;
+}
+#nav-main li{
+  
+  float: left;
+
+}
+#nav-main li a {
+  background: #fff;
+  color: #797F7A;
+  font-size: 27px;
+  margin-left:35px;
+  transition: all 0.5s ease 0.1s;
+  
+}
+
+#nav-main li a:hover {
+  background: #fff;
+  color: #3C3F3D;
+  border-bottom: 2px solid #146aba;
+
+}
+#nav-main li a.active {
+
+  color: #3C3F3D;
+  border-bottom: 2px solid #6BAF77;
+}
+
+}
+
 .blog_excerpt{
     padding-bottom: 24px;
 }
@@ -338,7 +410,7 @@ h1.title{
 
 section.content{
    padding: 12px;
-   margin-top: 20px;
+   margin-top: 200px;
 }
 
 /* listing */
@@ -556,16 +628,14 @@ h1 a, h2 a, h3 a{
 h1.title a:hover{
     color: #33B773;
     text-decoration: none;
+
 }
 
 h1.owner a{
-    font-weight: 500;
-    font-size: 42px;
-    
-    margin-top: 0px;
-    
-    font-family: 'Arial',Arial,Helvetica,sans-serif;
-    color: #ECEAFF;color: #33B773;
+    font-size: 60px;
+    font-family: sans-serif, helvetica, Arial;
+    color: #433333;
+
     
 }
 h1.owner a:hover {

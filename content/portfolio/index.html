@@ -8,6 +8,9 @@ description: Portfolio page in the BASIC hyde template
  {% block css %}
 
   <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+
+  <link rel="stylesheet" href="{{ media_url('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/simple-sidebar.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/base.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
@@ -23,6 +26,21 @@ description: Portfolio page in the BASIC hyde template
 
 	</div>
 {% endblock main %}
+
+{% block navi %}
+<div id="nav-main">
+
+            <ul class="nav nav-pills">
+
+              <li><a href="{{ content_url('about.html')}}">About</a></li>
+              <li><a href="{{ content_url('blog/') }}">Archive</a></li>
+              <li><a class="active" href="#">Projects</a></li>
+              <li><a href="#">Walk-through</a></li>
+            </ul>
+            
+            </div>
+{% endblock %}
+
 
 {% block jquery %}
 	<script>

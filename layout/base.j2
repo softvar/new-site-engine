@@ -41,6 +41,8 @@
 
   {% block css %}
   <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/simple-sidebar.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/jquery.classysocial.css') }}" />
   {% endblock css %}
@@ -52,7 +54,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
     <script src="/media/js/libs/jquery.scrollUp.min.js"></script>
     <script src="/media/js/libs/jquery.classysocial.js"></script>
-    <script src="/media/js/libs/no-crack.js"></script>
+    <!-- <script src="/media/js/libs/no-crack.js"></script> -->
     
     
   {% endblock headjs %}
@@ -65,10 +67,11 @@
             <h1 class="owner"><a href="index.html">Varun Malhotra</a></h1>
             
           {%- endblock %}
-          {% block nav %}
-          {% from "macros.j2" import render_nav with context %}
-          {{ render_nav(menu, 'main_nav') }}
-          {% endblock %}
+
+              {% block navi %}
+
+              {% endblock %}
+            
           </header>
   <div id="container" >
       {% block container %}

@@ -1,12 +1,95 @@
----
-title: Recent Posts
-extends: listing_main.j2
-default_block: test
-listable: false
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-{% block all %}
-<div class="browse_all">
-<< <a href="/blog">Browse All posts </a> >>
-</div>
-{% endblock %}
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="media/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="media/css/simple-sidebar.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+  
+    <div id="wrapper">
+      
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+      <img src="media/img/cloud1.jpg" width="400" height=100%></img>
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href="/">Varun Malhotra</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Demos</a></li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Activities</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </div>
+          
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <div class="content-header">
+          
+            <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+
+            <span class="owner">Varun Malhotra</span>
+            
+        </div>
+            
+            <div id="navi">
+
+            <ul class="nav nav-pills">
+
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog/">Archive</a></li>
+              <li><a href="portfolio/">Projects</a></li>
+              <li><a href="#">Walk-through</a></li>
+            </ul>
+            
+            </div>
+
+            <img class ="circular" src="media/img/varun.jpg" width="150" height="150"></img>
+
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          
+        
+        <footer>
+        	<div id="social-icons">
+        		<a href="#"><div class="linkedin" title="LinkedIn"></div></a>
+        		<a href="http://twitter.com/s0ftvar"><div class="twitter" title="Twitter"></div></a>
+        		<a href="http://github.com/softvar"><div class="github" title="Github"></div></a>
+        	</div>
+          	<div class="footer-text">
+            	Copyright (c) 2013
+          	</div>
+        </footer>
+        </div>
+      </div>
+      
+    </div>
+	
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/js/libs/jquery.min.js"></script>
+    <script src="media/js/libs/bootstrap.js"></script>
+    <!-- Put this into a custom JavaScript file to make things more organized -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+  </body>
+</html>
