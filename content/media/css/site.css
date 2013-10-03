@@ -110,9 +110,9 @@ footer{position:relative;
     text-shadow: 0px 2px 0px #fff;
     height: 10%;
     background: #fff;
-    width: 70%;
+    width: 65%;
     margin: 0 auto;
-  
+    background: black;
     border-top: 0px;
     border-radius: 3px;
     border-top-left-radius: 0px;
@@ -124,7 +124,10 @@ footer{position:relative;
 
     
 }
+
 .footer_link a{
+
+  font-size: 30px;
     color: #37B78C;
 }
 
@@ -237,7 +240,7 @@ footer{position:relative;
     margin:0 auto;
     height: 35px;
     width:98.4%;background: #fff;
-    
+   
     padding: 12px;
     
     
@@ -410,7 +413,7 @@ h1.title{
 
 section.content{
    padding: 12px;
-   margin-top: 200px;
+   margin-top: 20px;
 }
 
 /* listing */
@@ -631,15 +634,27 @@ h1.title a:hover{
 
 }
 
+h1.owner {
+  width: 65%;
+  height: 80px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0px;
+  background: #212121;
+
+}
 h1.owner a{
+
     font-size: 60px;
     font-family: sans-serif, helvetica, Arial;
     color: #433333;
+    color: #fff;
 
-    
 }
 h1.owner a:hover {
     color: #ed5e6f;
+    
+    color: #C0C0C0;
     text-decoration: none;
 }
 h2 {
@@ -649,6 +664,8 @@ h2 {
     border-bottom: 2px solid #424242;
     padding: 12px 0px 2px;
 }
+
+
 .social-me {
     border-bottom: 2px solid #F2F2f2;
     
@@ -770,10 +787,48 @@ a.backlink:hover, a.prev:hover, a.next:hover{
 
 }
 
+/**********************
+Project Section Begins
+**********************/
+#project-showcase p{
+  font-family: 'Lato', sans-serif;font-family: 'Bitter', serif;
+}
+
+.project-title {
+font-size: 25px;
+    font-weight: normal;
+    color: #3B5B9B;
+    padding: 12px 0px 2px;
+}
+
 .projects{
     margin-top: 35px;
 }
 
+#project-no {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+#project-endline {
+  padding: 10px;
+  width: 80%;
+  border-bottom: 2px solid #DEDEDC;
+}
+#long-description {
+  font-size: 20px;
+  width: 80%;
+  text-align: left;
+}
+
+.tech-specs{
+  color: #db3636;
+  text-decoration: underline;
+}
+
+/**********************
+  Project Section Ends
+**********************/
 .about_me {
     padding: 2px;
     font-size: 18px;
@@ -787,6 +842,10 @@ a.backlink:hover, a.prev:hover, a.next:hover{
 .about_me h2 {
     color: #33B773;
 }
+
+#social-media-cons {
+
+ }
 
 #follow {
     text-align: center;

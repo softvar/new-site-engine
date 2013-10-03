@@ -45,6 +45,8 @@
   <link rel="stylesheet" href="{{ media_url('css/simple-sidebar.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/jquery.classysocial.css') }}" />
+  <link rel="stylesheet" href="{{ media_url('font-awesome/css/font-awesome.min.css') }}" />
+  
   {% endblock css %}
 
   {% block headjs %}
@@ -62,17 +64,12 @@
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
   {% block content %}
-  <header class="banner clearfix">
-          {% block header -%}
-            <h1 class="owner"><a href="{{ content_url('/') }}">Varun Malhotra</a></h1>
-            
-          {%- endblock %}
+  
+          <h1 class="owner"><a href="{{ content_url('/') }}">Varun Malhotra</a></h1>
 
               {% block navi %}
 
               {% endblock %}
-            
-          </header>
   <div id="container" >
       {% block container %}
       <div id="main" role="main">
@@ -83,7 +80,9 @@
           </section>
       </div>
  
-   
+  {% block all %}
+
+{% endblock %}   
 
   {% endblock container %}
   </div> <!--! end of #container -->
@@ -91,7 +90,18 @@
  
 
   <footer>
-     
+      
+      <div id="social-media-cons">
+            <a href="#" target="_blank"><i class="icon-linkedin icon-2x " title="LinkedIn" ></i></a>
+
+            <a href="http://twitter.com/s0ftvar" target="_blank" ><i class="icon-twitter icon-2x " title="Twitter" ></i></a>
+
+            <a href="http://stackoverflow.com/users/2494535/varun-malhotra" target="_blank"><i class="icon-stackexchange icon-2x " title= "Stackoverflow"></i></a>
+            
+            <a href="http://github.com/softvar" target="_blank"><i class="icon-github icon-2x " title="Github"></i></a>
+
+      </div>
+      <br /><br />
       Powered by <span class="footer_link" ><a href="http://ringce.com/hyde">hyde</a></span>
       
       
@@ -100,8 +110,6 @@
 
   {% endblock content%}
   {% block js %}
-
-    <script src="/media/js/libs/jquery.github.js"></script>
     <script type="text/javascript">
    
     $(".classysocial").each(function() {

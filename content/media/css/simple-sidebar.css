@@ -19,6 +19,32 @@
   text-align: center;
 }
 
+.icon-stackexchange, .icon-github, .icon-linkedin, .icon-twitter {
+color: #C0C0C0; 
+margin-left: 15px;
+transition: all 0.5s ease 0.2s;
+}
+
+.icon-linkedin:hover {
+  color: #65B7D2;
+  text-decoration: none;
+}
+.icon-twitter:hover {
+color: #45B0E3;
+text-decoration: none;
+}
+
+.icon-stackexchange:hover {
+color: #FF8A1B;
+text-decoration: none;
+}
+
+.icon-github:hover {
+color: #333333;
+text-decoration: none;
+}
+
+
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -95,6 +121,7 @@
   text-align: center;
 }
 
+
 .circular {
 	margin-top: 60px;
 	border-radius: 150px;
@@ -109,8 +136,9 @@
   margin-top: 100px;
  
   margin-left: 100px;
-  margin-right: 100px;  border-top: 1px solid #DEDEDC;
-  border-bottom: 1px solid #DEDEDC;
+  margin-right: 100px;  
+  border-top: 2px solid #DEDEDC;
+  border-bottom: 2px solid #DEDEDC;
 }
 #navi li{
   
@@ -234,7 +262,45 @@ height: 48px;
   font-size: 22px;
 }
 
+h1.owner {
+  width: 100%;
+  
 }
+
+h1.owner a{
+  font-size: 50px;
+}
+
+footer{
+  width: 100%;
+}
+
+#container{
+  width: 80%;
+}
+
+}
+
+
+@media (max-width:480px) {
+h1.owner {
+  width: 100%;
+}
+h1.owner a{
+  font-size: 40px;
+}
+
+footer{
+  width: 100%;
+}
+
+#container{
+  width: 100%;
+}
+
+}
+}
+
 
 /*****************
 

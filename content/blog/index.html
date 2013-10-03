@@ -1,15 +1,11 @@
 ---
+
 title: Recent Posts
 extends: listing_main.j2
 default_block: test
 listable: false
 ---
 
-{% block all %}
-<div class="browse_all">
- <a href="/blog">Browse All posts </a> 
-</div>
-{% endblock %}
 
 {% block navi %}
 <div id="nav-main">
@@ -17,10 +13,17 @@ listable: false
             <ul class="nav nav-pills">
 
               <li><a href="{{ content_url('about.html') }}">About</a></li>
-              <li><a class="active" href="#">Archive</a></li>
+              <li><a class="active" href="{{ content_url('blog/') }}">Archive</a></li>
               <li><a href="{{ content_url('portfolio/') }}">Projects</a></li>
               <li><a href="#">Walk-through</a></li>
             </ul>
             
             </div>
+{% endblock %}
+
+
+{% block all %}
+<div class="browse_all">
+ <a href="/blog">Browse All posts </a> 
+</div>
 {% endblock %}
