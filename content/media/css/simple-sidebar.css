@@ -19,10 +19,15 @@
   text-align: center;
 }
 
+
+a .icon-stackexchange, .icon-github, .icon-linkedin, .icon-twitter {
+text-decoration: none;
+}
 .icon-stackexchange, .icon-github, .icon-linkedin, .icon-twitter {
 color: #C0C0C0; 
 margin-left: 15px;
 transition: all 0.5s ease 0.2s;
+text-decoration: none;
 }
 
 .icon-linkedin:hover {
@@ -171,6 +176,10 @@ padding: 5px;
 
 #social-icons {
 	margin-top: 35px;
+}
+
+#social-icons a {
+  text-decoration: none;
 }
 
 .linkedin {
