@@ -172,6 +172,8 @@ padding-top: 3px;
 .footer-text {
 text-align: center;
 padding: 5px;
+font-size: 16px;
+font-family: 'Lato', sans-serif;font-family: 'Bitter', serif;
 }
 
 #social-icons {
