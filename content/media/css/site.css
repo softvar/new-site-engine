@@ -887,9 +887,21 @@ text-decoration: none;
   color: rgba(0, 0, 0, 0.5);color: #fff;
 
 }
-#folder{
-    color: blue;
+.folder-but{
+    background: none;
+    color: none;
+    cursor: pointer;
 }
+
+#sub-folder {
+	margin-left: 30px;
+}
+
+#sub-sub-folder {
+	margin-left: 45px;
+}
+
+
 .highlight pre {
   font-size: 14px;
   padding: 12px 12px 2px;
@@ -897,7 +909,7 @@ text-decoration: none;
   margin-bottom: 8px;
   font-style: Verdana;
   word-wrap: break-word;
-  color: #222222;
+  color: #fff;
 }
 
 
