@@ -15,7 +15,160 @@ tags:
 ---
 
 {% mark excerpt -%}
-Yay! this is my second approved FIREFOX-OS(FOS) App- **GistHub**. It's free to download from [Firefox marketplace](https://marketplace.firefox.com/app/gisthub/) for firefox smartphones :)
-
+Yay! this is my second approved FIREFOX-OS(FOS) App- **GistHub**, after the basic [Calculator](../07/fOS-intro.html) app. It's an app for firefox smartphones, which helps Github Users to access and manage their Gists instantly without opening the site in browser. It's free to download from [Firefox marketplace](https://marketplace.firefox.com/app/gisthub/) for firefox smartphones :)
 
 {% endmark %}
+
+Inspiration
+-----------
+
+The inspiration came from my boring travelling times. I urge an need to code while on the way and Gists are the best way to do so. Meanwhile, I was fond of Firefox OS, going to hit the market in just few months. And there it goes... <i class="icon-thumbs-up"></i>
+
+I came up with an idea to manage your gists and access other all under one hood.
+
+Following things can be efficiently acheived:
+---------------------------------------------
+
+
+  <i class="icon-eye-open icon-border" ></i> View all github-gists  
+
+  <i class="icon-edit icon-border" ></i> Edit a gist
+
+  <i class="icon-remove-circle icon-border" style="color:red;" ></i> Delete a particular gist  
+
+  <i class="icon-code icon-border" style="color:pink;" ></i> Create numbers of gists
+
+  <i class="icon-search icon-border" style="color:green"></i> Search any github users' gists  
+
+  <i class="icon-code-fork icon-border" ></i> Fork, Star, Unstar any number of gists 
+
+User Authentication
+-------------------
+
+A User can Login into the app using his Github email-id/username along with the password. The engine used behing the authentication has been carried out using the [IndexedDB API](https://developer.mozilla.org/en/docs/IndexedDB), a client-side storage of significant amounts of structured data and for high performance searches on the data using indexes.
+
+<span style="font-weight:bold;color:black;text-align:center;">Initialize Database</span>
+
+{% syntax javascript %}
+initializeDB:function initializeDB(){
+var notes="";
+var objectStore = this.database.transaction("notes").objectStore("notes");
+
+
+var objectStore = this.database.transaction("notes").objectStore("notes");
+objectStore.openCursor().onsuccess = function(event) {
+  var cursor = event.target.result;
+
+  if (cursor) {
+    //... Already logged in, do stuff and redirect
+    location.href = "view_gists.html";
+    cursor.continue();
+  }
+  
+};
+}
+{% endsyntax %}
+
+<span style="font-weight:bold;color:black;text-align:center;">Identification & Authentication using AJAX call</span>
+
+{% syntax javascript %}
+
+// function for saving the credentials after successful logging
+saveCredentials: function saveCredentials(username,password,UserImage,UserLogin) {
+	var note = {'name':username,'pass':password,'image':UserImage,'login':UserLogin};
+	
+	
+	
+var transaction = this.database.transaction(["notes"], "readwrite");
+var objectStore = transaction.objectStore("notes");
+var request=objectStore.put(note);
+request.onsuccess = function(event) {
+
+  location.href = "view_gists.html";
+};
+}
+
+// function to generate the BASIC Hash for authentication 
+generateTokenHash: function generateTokenHash(user, password) {
+  var tok = user + ':' + password;
+  var hash = btoa(tok);
+  
+  return "Basic " + hash;
+},
+
+// AJAX call to test authorization
+loginNauth: function loginNauth(username,password) {
+
+var obj = new Object();
+obj = this;
+
+
+      $.ajax({
+        url: 'https://api.github.com/user',
+        type: 'GET',
+        dataType: 'json',
+        beforeSend: function (xhr){ 
+        xhr.setRequestHeader('Authorization', obj.generateTokenHash(username,password)); 
+    }
+      })
+      .success( function(e) {
+           
+		/* successfully logged in, parse the data, 
+		   GET as JSON Object, and store for future refrences */
+    
+        obj.saveCredentials(UserLogin,password,UserImage,UserLogin);
+      })
+      .error( function(e) {
+      
+		    alert("Authentication Failed !");
+		
+      })
+}
+{% endsyntax %}
+
+
+Viewing your Gists <i class="icon-eye-open" style="color:black;"></i>
+------------------
+<div id="fos-content">
+
+As per the [Github API v3](http://developer.github.com/v3/), only the recent 30 Gists will be available for viewing. Bootstrap pagination helps in viewing the Gists in pages, each lisitng upto 8 Gists.
+
+A Github User, after logging in, can now view the Description(if present) and the Contents of the Gist and, if required, a Gist can be successfully edited.
+
+
+</div>
+<img id="fos-image" src="{{ media_url('images/VIEWGIST.jpg') }}"></img>
+
+Creating a new Gist <i class="icon-code " style="color:pink;" ></i>
+-------------------
+<div id="fos-content">
+
+Here it comes the basic idea for having this app. A user can create as many Gists as he wants. Providing Name and Description for a Gist is not mandatory and Github automatically assigns a default name for that. Content for the Gist is necessary and what it should be. 
+
+By default, all the Gists created will be public in nature.
+Once created, the Gist can also be deleted by switching over to Viewing tab and going for the Delete Option.
+
+You can copy & paste the contents wherever needed.
+
+</div>
+<img id="fos-image" src="{{ media_url('images/CREATEGIST.jpg') }}"></img>
+
+Searching Gists & Other Operations <i class="icon-code-fork " style="color:black;" ></i>
+----------------------------------
+<div id="fos-content">
+
+Most interestingly, you can view the Gists of any Github user by providing his valid username. Again just to remind, only recent 30 Gists will be available for the lisitng as per the [Github API v3](http://developer.github.com/v3/).
+
+A User can: 
+
+  <i class="icon-circle" style="font-size: 15px;color:#45C17D;"></i> View <i class="icon-eye-open icon-border" ></i> the details of the Gist(s) listed. <br />
+
+  <i class="icon-circle" style="font-size: 15px;color:#45C17D;"></i> Fork <i class="icon-code-fork icon-border"></i> the desired Gist(s).<br />
+  
+  <i class="icon-circle" style="font-size: 15px;color:#45C17D;"></i> Star <i class="icon-star icon-border" style="color:#F7B500;"></i> the favourite Gist(s).<br />
+  
+  <i class="icon-circle" style="font-size: 15px;color:#45C17D;"></i> Unstar <i class="icon-star-empty icon-border" ></i> the Gist(s).<br />
+
+</div>
+
+<img id="fos-image" src="{{ media_url('images/SEARCHGIST.jpg') }}"></img>
