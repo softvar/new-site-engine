@@ -16,14 +16,14 @@ tags:
 {% mark excerpt -%}
 [HYDELINK]: www.hyde.com "HYDE's official site"
 
-A will for creating a personal website/blog, after spending a lot of time researching and experimenting with various frameworks, came to an end with this. I'm glad to discuss my experience with a new open-source technology, smelting this site, [HYDE](www.hyde.com). HYDE's built-in web server + auto-generator provide instant refresh and unlimited flexibility. No database, no slowness, no digg-effect.
+A will for creating a personal portfolio cum blog site, after spending a lot of time researching and experimenting with various frameworks, came to an end with this. I'm glad to discuss my experience with a new open-source technology, smelting this site, [HYDE](www.hyde.com). HYDE's built-in web server + auto-generator provide instant refresh and unlimited flexibility. No database, no slowness, no digg-effect.
 
 {%- endmark %}
 
 Why HYDE
 --------
 
-It saves a lot of considerable amount of time rather writing from the scratch. It's built-in features and plug-ins inspired me to peep inside it. After satisfying the requirements for the HYDE environment to be set up, it's hardly a matter of few seconds to have a full-structured working site on your local web server. You'll greatly appreciate when you read about integrating your work with Fabric below, that even these few seconds can be reduced to merely a second, Yep! just single command to have full blog/website. Yay :) 
+It saves a lot of considerable amount of time rather writing from the scratch. It's built-in features and plug-ins inspired me to work with it. After satisfying the requirements for the HYDE environment to be set up, it's hardly a matter of few seconds to have a full-structured working site on your local web server. You'll greatly appreciate the amount of time spent in serving up when you'll read about integrating your work with Fabric below, that even these few seconds can be reduced to merely a second, Yep! just a single command to have your website cum blog serving up. Isn't it interesting? Yeah, Carry on! 
 
 Installation and Setup
 ----------------------
@@ -128,7 +128,7 @@ Intro
 =====
 Section 1
 ---------
-The **dream** is not *what yo see in sleep*,
+The **dream** is not *what you see in sleep*,
 
 **dream** is the thing which does not __let you sleep__.
 
@@ -136,7 +136,7 @@ The **dream** is not *what yo see in sleep*,
 
 ##Three simple steps to succeed
 1. Knowledge
-2. Will
+2. Determination
 3. The Means
 {% endsyntax%}
  
@@ -148,7 +148,7 @@ will be converted to :
 
 <h2>Section 1</h2>
 
-<p>The <strong>dream</strong> is not <em>what yo see in sleep</em>,</p>
+<p>The <strong>dream</strong> is not <em>what you see in sleep</em>,</p>
 
 <p><strong>dream</strong> is the thing which does not <strong>let you sleep</strong>.</p>
 
@@ -158,7 +158,7 @@ will be converted to :
 
 <ol>
 <li>Knowledge</li>
-<li>Will</li>
+<li>Determination</li>
 <li>The Means</li>
 </ol>
 {% endsyntax %}
@@ -230,14 +230,13 @@ I found this *template* engine quite interesting to use. A template allows to ex
 Layout
 ------
 
-
-<br />
-<i class="icon-folder-open" style="color:#99BBD6;"></i>content<br />
+<div id="hyde-layout">
+<i class="icon-folder-open" style="color:#99BBD6;font-size:30px;"></i><span style="font-size:20px;"> content</span><br />
 
 <div id="sub-folder">
 <i class="icon-folder-open" style="color:#99BBD6;"></i>blog<br />
 
-<div id="sub-sub-folder">
+<div id="sub-folder">
 <i class="icon-folder-open" style="color:#99BBD6;"></i>tags<br />
 <i class="icon-file" style="color:#444444;"></i>index.yaml<br />
 <i class="icon-file" style="color:#444444;"></i>meta.yaml<br />
@@ -254,7 +253,7 @@ Layout
 
 <i class="icon-folder-open" style="color:#99BBD6;"></i>portfolio<br />
 
-<div id="sub-sub-folder">
+<div id="sub-folder">
 <i class="icon-file" style="color:#444444;"></i>index.html<br />
 </div>
 
@@ -262,11 +261,11 @@ Layout
 <i class="icon-file" style="color:#444444;"></i>favocin.ico<br />
 <i class="icon-file" style="color:#444444;"></i>index.html<br />
 </div>
-</span>
-<i class="icon-folder-open" style="color:#99BBD6;"></i>deploy<br />
-<i class="icon-folder-open" style="color:#99BBD6;"></i>layout<br />
 
-<div id="sub-sub-folder">
+<i class="icon-folder-open" style="color:#99BBD6;font-size:30px;"></i> deploy<br />
+<i class="icon-folder-open" style="color:#99BBD6;font-size:30px;"></i> layout<br />
+
+<div id="sub-folder">
 <i class="icon-file" style="color:#444444;"></i>analytics.j2<br />
 <i class="icon-file" style="color:#444444;"></i>atom.j2<br />
 <i class="icon-file" style="color:#444444;"></i>base.j2<br />
@@ -281,6 +280,7 @@ Layout
 <i class="icon-file" style="color:#444444;"></i>README.markdown<br />
 <i class="icon-file" style="color:#444444;"></i>site.yaml<br />
 
+</div>
 
 Content
 -------
