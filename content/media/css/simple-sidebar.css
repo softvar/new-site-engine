@@ -146,9 +146,7 @@ text-decoration: none;
   border-bottom: 2px solid #DEDEDC;
 }
 #navi li{
-  
   float: left;
-
 }
 #navi li a {
   background: #fff;
@@ -353,7 +351,7 @@ BOOTSTRAP COPYING
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 10px 26px;
 }
 
 .nav > li > a:hover,
