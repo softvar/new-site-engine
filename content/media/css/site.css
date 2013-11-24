@@ -110,7 +110,7 @@ footer{position:relative;
     text-shadow: 0px 2px 0px #fff;
     height: 10%;
     background: #fff;
-    width: 100%;
+    width: 70%;
     margin: 0 auto;
     background: black;
     border-top: 0px;
@@ -664,24 +664,21 @@ h1.title a:hover{
 
 }
 
-h1.owner {
-  width: 100%;
-  height: 80px;
+.owner {
+  width: 70%;
+  height: 100px;
   text-align: center;
   margin: 0 auto;
   margin-top: 0px;
   background: #212121;
-
-
 }
-h1.owner a{
-
+.owner a{
     font-size: 60px;
     font-family: sans-serif, helvetica, Arial;
     color: #fff;
 
 }
-h1.owner a:hover {
+.owner a:hover {
     color: #ed5e6f;
     
     color: #C0C0C0;
@@ -825,6 +822,7 @@ Project Section Begins
     font-family: 'Lato', sans-serif;font-family: 'Bitter', serif;
 	text-align:justify;
 	text-justify:inter-word;
+  
 }
 
 .project-title {
@@ -845,7 +843,7 @@ font-size: 25px;
 
 #project-endline {
   padding: 10px;
-  width: 80%;
+  width: 100%;
   border-bottom: 2px solid #DEDEDC;
 }
 #long-description {

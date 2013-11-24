@@ -253,8 +253,8 @@ height: 48px;
   display: inline-block;
 }
 .owner {
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 30px;
+  width:100%;
   font-family: sans-serif, helvetica, Arial;
 
 }
@@ -374,12 +374,15 @@ BOOTSTRAP COPYING
 
 .nav-pills > li {
   float: left;
-
+   
 }
 
 .nav-pills > li > a {
   border-radius: 1px;
   border-bottom: 2px solid #fff;
+  outline: 0;
+    outline-style:none;
+    outline-width:0;
 }
 
 .nav-pills > li + li {
