@@ -14,9 +14,23 @@ description: Portfolio page in the BASIC hyde template
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/base.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/project.css') }}">
    <link rel="stylesheet" href="{{ media_url('font-awesome/css/font-awesome.min.css') }}" />
   
   {% endblock css %}
+    {% block headjs %}
+  <!-- All JavaScript at the bottom, except for Modernizr which
+        enables HTML5 elements & feature detects -->
+    <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script src="/media/js/libs/jquery.scrollUp.min.js"></script>
+    <script src="/media/js/libs/jquery.classysocial.js"></script>
+    
+    <script src="/media/js/libs/jquery.github.js"></script>
+    <!-- <script src="/media/js/libs/no-crack.js"></script> -->
+    
+    
+  {% endblock headjs %}
 {% block main %}
 <!-- Content goes here -->
 <a href="https://github.com/softvar"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
@@ -34,11 +48,15 @@ HYDE provides me beautiful Syntax Highlighting Plugin to post all my code-snippe
 <br /><br />
 <i class="tech-specs">Technologies Implemented:</i> Python, HYDE, HTML, CSS, Bootstrap, JS, Jinja2, Markdown
 </p>
-
+<br />
+<div data-repo="softvar/softvar.github.io" class="github-box-wrap"></div>
+<br /><br/>
+<!--
 <a class="btn btn-info" href="http://github.com/softvar/softvar.github.io">
   <i class="icon-github" style="color:black" ></i> Source Code</a>
 <a class="btn btn-info" href="http://github.com/softvar/softvar.github.io">
   <i class="icon-download-alt"></i> Download</a>
+-->
   <a class="btn btn-success" target="_blank" href="http://varunmalhotra.info/">
   <i class="icon-play" style="color:white"></i> Live Demo</a>
 
@@ -72,10 +90,9 @@ Read Full Documention at <a href="https://simplegist.readthedocs.org/en/latest/"
     <i class="tech-specs">Technologies Implemented:</i> Python, Github-APi(v3), Requests
 </p>
 
-<a class="btn btn-info" href="http://github.com/softvar/simplegist">
-  <i class="icon-github" style="color:black" ></i> Source Code</a>
-<a class="btn btn-info" href="http://github.com/softvar/simplegist">
-  <i class="icon-download-alt"></i> Download</a>
+<br />
+<div data-repo="softvar/simplegist" class="github-box-wrap"></div>
+<br /><br/>
 
 <div id="project-endline"></div>
 
@@ -97,10 +114,9 @@ Read Full Documention at <a href="https://simplegist.readthedocs.org/en/latest/"
 
 </p>
 
-<a class="btn btn-info" href="http://github.com/softvar/json2html">
-  <i class="icon-github" style="color:black" ></i> Source Code</a>
-<a class="btn btn-info" href="http://github.com/softvar/json2html">
-  <i class="icon-download-alt"></i> Download</a>
+<br />
+<div data-repo="softvar/json2html-flask" class="github-box-wrap"></div>
+<br /><br/>
 <a class="btn btn-success" target="_blank" href="http://json2html.herokuapp.com">
   <i class="icon-play" style="color:white"></i> Live Demo</a>
 
@@ -127,10 +143,9 @@ collaborativeness, but it let users to know the work status of others, let synci
 
 </p>
 
-<a class="btn btn-info" href="http://github.com/softvar/pyShare">
-  <i class="icon-github" style="color:black" ></i> Source Code</a>
-<a class="btn btn-info" href="http://github.com/softvar/pyShare">
-  <i class="icon-download-alt"></i> Download</a>
+<br />
+<div data-repo="softvar/pyshare" class="github-box-wrap"></div>
+<br /><br/>
 
 <div id="project-endline"></div>
 
@@ -158,10 +173,9 @@ Some Features include:<br />
 
 </p>
 
-<a class="btn btn-info" href="http://github.com/softvar/fos-Gisthub">
-  <i class="icon-github" style="color:black" ></i> Source Code</a>
-<a class="btn btn-info" href="http://github.com/softvar/fos-Gisthub">
-  <i class="icon-download-alt"></i> Download</a>
+<br />
+<div data-repo="softvar/fos-gisthub" class="github-box-wrap"></div>
+<br /><br/>
 
 <div id="project-endline"></div>
 
@@ -185,10 +199,9 @@ Melange is currently beta version and supports only a few HTML tags. A User can 
 
 </p>
 
-<a class="btn btn-info" href="http://github.com/softvar/Melange">
-  <i class="icon-github" style="color:black" ></i> Source Code</a>
-<a class="btn btn-info" href="http://github.com/softvar/Melange">
-  <i class="icon-download-alt"></i> Download</a>
+<br />
+<div data-repo="softvar/melange" class="github-box-wrap"></div>
+<br /><br/>
 
 <div id="project-endline"></div>
 
@@ -212,11 +225,9 @@ achieved using multi-level link-lists and structures.
 <i class="tech-specs">Technologies Implemented:</i> Data-Structures, C/C++
 </p>
 
-
-<a class="btn btn-info" href="http://github.com/softvar/ProWord">
-  <i class="icon-github" style="color:black" ></i> Source Code</a>
-<a class="btn btn-info" href="http://github.com/softvar/ProWord">
-  <i class="icon-download-alt"></i> Download</a>
+<br />
+<div data-repo="softvar/proword" class="github-box-wrap"></div>
+<br /><br/>
 
 
 <div id="project-endline"></div>
@@ -237,19 +248,23 @@ Obstacles in between makes the situation a bit trickier.
 <i class="tech-specs">Technologies implemented:</i> C/C++, Borland Graphics
 </p>
 
-
-<a class="btn btn-info" href="http://github.com/softvar/goldMiner">
-  <i class="icon-github" style="color:black" ></i> Source Code</a>
-<a class="btn btn-info" href="http://github.com/softvar/goldMiner">
-  <i class="icon-download-alt"></i> Download</a>
+<br />
+<div data-repo="softvar/goldMiner" class="github-box-wrap"></div>
+<br /><br/>
 
 
 <div id="project-endline"></div>
 
 </div>
 </div>
+<script type="text/javascript">
+   console.log($("[data-repo]"));
+   $("[data-repo]").github();
 
+  </script>
 {% endblock main %}
+
+
 
 {% block navi %}
 <div id="nav-main">
