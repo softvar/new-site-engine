@@ -16,14 +16,23 @@
     <link href="media/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
   </head>
-
+  <script src="media/js/libs/jquery.min.js"></script>
+  <script>
+    // Returns a random number between min (inclusive) and max (exclusive)
+    function getRandomArbitrary(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    // Currently I have a set of 4 HD Nature Wallpapers
+    var i = getRandomArbitrary(1,3).toFixed(0),
+        el = '<img src="media/img/nature' + i + '.jpg" width="385" height=100% />';
+  </script>
   <body>
 
     <div id="wrapper">
 
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
-      <img src="media/img/cloud1.jpg" width="385" height=100%></img>
+      <!-- <img src="media/img/cloud1.jpg" width="385" height=100%></img> -->
 
       </div>
 
@@ -75,10 +84,10 @@
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="media/js/libs/jquery.min.js"></script>
     <script src="media/js/libs/bootstrap.js"></script>
     <!-- Put this into a custom JavaScript file to make things more organized -->
     <script>
+    $('#sidebar-wrapper').prepend(el);
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
