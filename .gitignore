@@ -2,4 +2,4 @@ deploy/
 *.pyc
 *.*~
 .hyde_deps
-
+.DS_STORE
