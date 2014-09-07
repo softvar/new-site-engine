@@ -6,5 +6,5 @@ listable: false
 
 {% set tag = site.tagger.tags['HTML5'] %}
 {% set source = site.content.node_from_relative_path('blog') %}
-{% set walker = source.walk_resources_tagged_with_HTML5 %}
+{% set walker = source['walk_resources_tagged_with_HTML5'] %}
 {% extends "tagged_posts.j2" %}

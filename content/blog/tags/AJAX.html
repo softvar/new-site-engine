@@ -6,5 +6,5 @@ listable: false
 
 {% set tag = site.tagger.tags['AJAX'] %}
 {% set source = site.content.node_from_relative_path('blog') %}
-{% set walker = source.walk_resources_tagged_with_AJAX %}
+{% set walker = source['walk_resources_tagged_with_AJAX'] %}
 {% extends "tagged_posts.j2" %}
