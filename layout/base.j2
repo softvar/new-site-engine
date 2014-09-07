@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/jquery.classysocial.css') }}" />
   <link rel="stylesheet" href="{{ media_url('font-awesome/css/font-awesome.min.css') }}" />
-  
+
   {% endblock css %}
 
   {% block headjs %}
@@ -57,14 +57,14 @@
     <script src="/media/js/libs/jquery.scrollUp.min.js"></script>
     <script src="/media/js/libs/jquery.classysocial.js"></script>
     <!-- <script src="/media/js/libs/no-crack.js"></script> -->
-    
-    
+
+
   {% endblock headjs %}
   {% block endhead %}{% endblock endhead %}
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
   {% block content %}
-  
+
           <div class="owner"><a href="{{ content_url('/') }}">Varun Malhotra</a></div>
 
               {% block navi %}
@@ -73,45 +73,45 @@
   <div id="container" >
       {% block container %}
       <div id="main" role="main">
-          
+
           <section class="content">
           {% block main %}
           {% endblock main %}
           </section>
       </div>
- 
+
   {% block all %}
 
-{% endblock %}   
+{% endblock %}
 
   {% endblock container %}
   </div> <!--! end of #container -->
- 
- 
+
+
 
   <footer>
-      
+
       <div id="social-media-cons">
             <a href="http://www.linkedin.com/pub/varun-malhotra/71/a14/131" target="_blank"><i class="icon-linkedin icon-2x " title="LinkedIn" ></i></a>
 
             <a href="http://twitter.com/s0ftvar" target="_blank" ><i class="icon-twitter icon-2x " title="Twitter" ></i></a>
 
             <a href="http://stackoverflow.com/users/2494535/varun-malhotra" target="_blank"><i class="icon-stackexchange icon-2x " title= "Stackoverflow"></i></a>
-            
+
             <a href="http://github.com/softvar" target="_blank"><i class="icon-github icon-2x " title="Github"></i></a>
 
       </div>
       <br />
       Smelted with <span class="footer_link" ><a href="http://ringce.com/hyde">hyde</a></span>
-      
-      
+
+
   </footer>
-  
+
 
   {% endblock content%}
   {% block js %}
     <script type="text/javascript">
-   
+
     $(".classysocial").each(function() {
     	new ClassySocial(this);
     });
@@ -123,9 +123,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
 
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
-  
+
   {% endblock jquery %}
-  
+
   {% block scripts %}
   {% endblock scripts %}
 
@@ -136,7 +136,7 @@
   <![endif]-->
 
   {% block analytics %}
-  {% include "analytics.j2" %}
+    {% include "analytics.j2" %}
   {% endblock analytics %}
 
   {% endblock js %}
