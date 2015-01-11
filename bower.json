@@ -1,0 +1,22 @@
+{
+  "name": "Varun Malhotra",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "latest",
+    "font-awesome": "latest",
+    "materialize": "latest",
+    "countable": "latest"
+  },
+  "description": "Personal website + blogging",
+  "keywords": [
+    "blogging"
+  ],
+  "homepage": "http://softvar.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "media/bower_components"
+  ]
+}

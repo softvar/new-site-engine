@@ -1,0 +1,8 @@
+{
+	"storage" : {
+		"packages" : ".bower/cache",
+		"registry" : ".bower/registry"
+	},
+	"tmp" : ".bower/tmp",
+    "directory": "bower_components"
+}
