@@ -21,11 +21,19 @@ context:
                 url: index.html
 
             -
-                name: Archive
-                description: Archive
+                name: Blog
+                description: Recent
                 css_class: blog
                 type: node
                 url: blog
+
+            -
+                name: Archive
+                description: Archive
+                css_class: archive
+                type: node
+                url: archive
+
             -
                 name: Projects
                 description: Projects
@@ -36,8 +44,14 @@ context:
                 name: About
                 description: About
                 css_class: about
-                type: page
-                url: about.html
+                type: node
+                url: about
+            -
+                name: Contact
+                description: Contact
+                css_class: contact
+                type: node
+                url: contact
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00
