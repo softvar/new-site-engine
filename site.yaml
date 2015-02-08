@@ -75,3 +75,6 @@ tagger:
             archive_extension: html
             meta:
                 listable: false
+markdown:
+    extensions:
+        - hydedown.passthrough
