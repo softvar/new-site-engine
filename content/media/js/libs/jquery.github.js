@@ -18,6 +18,24 @@ GithubRepo.prototype.toHTML = function () {
         self.url = self._parseURL( self.url );
 
         return $(
+                '<div class="card">'+
+                  '<div class="card-content">'+
+                    '<span class="card-title activator grey-text text-darken-4">'+self.name+'<i class="mdi-navigation-more-vert right"></i></span>' +
+                    '<p>' + self.description + '</p>'+
+                    '<p><a href="' + self.url + '" target="_blank">' + self.name + '</a><span class="repo-update"> - Latest commit to <strong>master</strong> on ' + self.pushed_at + '</span>'+
+                    '<span class="github-stats right">' +
+                        '<a class="repo-stars  tooltipped" target="_blank" href="' + self.url + '/watchers" data-position="bottom" data-tooltip="Stars on repo"><i class="fa fa-star"></i> ' + self.watchers + '</a>' +
+                        '<a class="repo-forks  tooltipped" target="_blank" href="' + self.url + '/network" data-position="bottom" data-tooltip="Repo Forks"><i class="fa fa-code-fork"></i> ' + self.forks + '</a>' +
+                    '</span>'+
+                    '</p>'+
+                  '</div>'+
+                  '<div class="card-reveal">'+
+                    '<span class="card-title grey-text text-darken-4">'+self.name+'<i class="mdi-navigation-close right"></i></span>'+
+                    '<p><a href="'+self.url+'#readme" target="_blank">Read more</a></p>'+
+                  '</div'+
+                  '</div>'
+                );
+        return $(
                 "<div class='github-box'>" +
                         "<div class='github-box-header'>" +
                                 "<h3>" +
