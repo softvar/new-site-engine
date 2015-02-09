@@ -8,6 +8,11 @@ tags:
     - CSS3
     - JavaScript
     - CSP
+toc:
+  - gettingStarted
+  - csp
+  - links
+readTime: 3
 ---
 
 {% mark excerpt -%}
@@ -19,7 +24,11 @@ So the journey begins from here. I found an article to get started with developi
 
 Here it is! Beautiful official <a href="https://www.mozilla.org/en-US/firefox/os/" target="_blank">FIREFOX-OS</a> website.
 
-Getting started with FOS-App: Calculator
++++++
+<div id="gettingStarted" class="section scrollspy  push-half--top">
++++++
+
+Getting started with FOS-App: Calculator <a href="#gettingStarted"><i class="fa fa-link  content-link"></i></a>
 ----------------------------------------
 
 I started developing an App for FOS, though a simple Calculator App performing some basic arithmetic calculations. I opted this app just to give a try and get familiar with the process that goes around. I successfully created the app using HTML5, CSS3 and JavaScript. It's so simple no, easily have an FOS app from your already created HTML5 driven app.
@@ -36,7 +45,11 @@ CSP is designed to be fully backward compatible; browsers that don't support it 
 
 eval() is one such Default_CSP_restriction and *was* also the core of my Calcultor app :)
 
-Dealing with CSP
++++++
+</div><div id="csp" class="section scrollspy  push-half--top">
++++++
+
+Dealing with CSP <a href="#csp"><i class="fa fa-link  content-link"></i></a>
 ----------------
 
 Include **'use strict'** in your script files. Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a "strict" operating context. This strict context prevents certain actions from being taken and throws more exceptions.
@@ -50,7 +63,7 @@ Initialized my own load method named *init* as
 var Calculator = {
 	init: function init() {
     document.addEventListener('mousedown', this);
-    
+
   },
 };
 
@@ -61,7 +74,7 @@ window.addEventListener('load', function load(evt) {
 
 {% endsyntax %}
 
-Functions like onclick, onmousedown, and so on called within HTML file are restricted. So I suggest using *data-type attribute* and listening events in the method defined as *handleEvent* 
+Functions like onclick, onmousedown, and so on called within HTML file are restricted. So I suggest using *data-type attribute* and listening events in the method defined as *handleEvent*
 
 {% syntax html %}
 <input type="button" id="_BUTTON-ID" value="_Submit" data-type="submit" />
@@ -71,28 +84,28 @@ Functions like onclick, onmousedown, and so on called within HTML file are restr
 {% syntax javascript %}
 
 handleEvent: function handleEvent(evt) {
-    this.target = evt.target;      // get the target/caller invoking it
+    this.target = 111 || evt.target;      // get the target/caller invoking it
     var value = this.target.value; // get the value of attribute *value* of caller
     var id = this.target.id;       // get the id of caller
 
     switch (this.target.dataset.type) {
-    	case 'submit': // check the data-type 
+    	case 'submit': // check the data-type
     		this.CALL_DESIRED_FUNCTION_NAME(*params*) // call event driven function
     		break;
-    	/* all cases as per your data-type attribute goes here... 
+    	/* all cases as per your data-type attribute goes here...
 		   don't forget to use *break;* unless more than one data-types
 		   need to behave similar on events   */
     }
 },
 {% endsyntax %}
 
-After adopting CSP rules, I headed towards designing my own *eval* method since it is restricted by CSP. Below is the code to execute valid arithmetic expressions without using the JavaScript function *eval()*. 
+After adopting CSP rules, I headed towards designing my own *eval* method since it is restricted by CSP. Below is the code to execute valid arithmetic expressions without using the JavaScript function *eval()*.
 
 Note: *this.disp.value* is containing the arithmetic expression given as an input by the user in the text field.
 
 {% syntax javascript %}
 compute: function compute() {
-  
+
   var sign = 1;
   if (this.disp.value[0] == '-') sign = -1;
   this.disp.value = this.calculate(this.disp.value,sign);
@@ -103,27 +116,27 @@ compute: function compute() {
 calculate: function calculate(input,sign){
 
    var opr_list = { add : '+'
-           , sub : '-' 
+           , sub : '-'
            , div : '/'
            , mlt : '*'
            , mod : '%'
            , pow : '^' };
-    
+
    opr_list.opr = [[ [opr_list.mlt] , [opr_list.div] , [opr_list.mod]],
             [ [opr_list.add] , [opr_list.sub] , [opr_list.pow] ]];
 
-   var input = input.replace(/[^0-9%^*\/()\-+.]/g,'');      
-   
+   var input = input.replace(/[^0-9%^*\/()\-+.]/g,'');
+
    var output,n;
-   for(var i=0, n=opr_list.opr.length; i<n; i++ ) { 
+   for(var i=0, n=opr_list.opr.length; i<n; i++ ) {
 
       var re = new RegExp('(\\d+\\.?\\d*)([\\'+opr_list.opr[i].join('\\')+'])(\\d+\\.?\\d*)');
-      re.lastIndex = 0;                                     
+      re.lastIndex = 0;
             while( re.test(input) ){
-         
+
 		 output = this.compute_result(opr_list,sign*RegExp.$1,RegExp.$2,RegExp.$3);
-		
-         if (isNaN(output) || !isFinite(output)) return output; 
+
+         if (isNaN(output) || !isFinite(output)) return output;
          input  = input.replace(re,output);
       }
    }
@@ -142,10 +155,14 @@ compute_result: function compute_result(opr_list,a,op,b){
          case opr_list.pow: return Math.pow(a,b); break;
          default: null;
       }
-   },   
+   },
 {% endsyntax %}
 
-About the App
++++++
+</div><div id="links" class="section scrollspy  push-half--top">
++++++
+
+About the App <a href="#links"><i class="fa fa-link  content-link"></i></a>
 -------------
 
 Browse the full source code <a href="https://github.com/softvar/firefoxos-calculator" target="_blank">here</a>
@@ -154,4 +171,6 @@ Download the App at <a href="https://marketplace.firefox.com/app/calculator-13/"
 
 My next FOS-App is coming soon...  :)
 
-
++++++
+</div>
++++++

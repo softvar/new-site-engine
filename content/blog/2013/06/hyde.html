@@ -9,33 +9,52 @@ tags:
     - markdown
     - jinja2
     - hyde
+readTime: 3
+toc:
+    - introduction
+    - installation
+    - yaml
+    - markdown
+    - syntaxHighlight
+    - templating
+    - layout
+    - content
+tweetShortUrl: https://bit.ly/16ayuHO
+
 ---
 
 
-
 {% mark excerpt -%}
-[HYDELINK]: www.hyde.com "HYDE's official site"
+[HYDELINK]: http://hyde.com "HYDE's official site"
 
-A will for creating a personal portfolio cum blog site, after spending a lot of time researching and experimenting with various frameworks, came to an end with this. I'm glad to discuss my experience with a new open-source technology, smelting this site, [HYDE](www.hyde.com). HYDE's built-in web server + auto-generator provide instant refresh and unlimited flexibility. No database, no slowness, no digg-effect.
+A will for creating a personal portfolio cum blog site, after spending a lot of time researching and experimenting with various frameworks, came to an end with this. I'm glad to discuss my experience with a new open-source technology, smelting this site, [HYDE][HYDELINK]. HYDE's built-in web server + auto-generator provide instant refresh and unlimited flexibility. No database, no slowness, no digg-effect.
 
 {%- endmark %}
 
-Why HYDE
++++++
+<div id="introduction" class="section scrollspy  push-half--top">
++++++
+
+Why HYDE <a href="#introduction"><i class="fa fa-link  content-link"></i></a>
 --------
 
-It saves a lot of considerable amount of time rather writing from the scratch. It's built-in features and plug-ins inspired me to work with it. After satisfying the requirements for the HYDE environment to be set up, it's hardly a matter of few seconds to have a full-structured working site on your local web server. You'll greatly appreciate the amount of time spent in serving up when you'll read about integrating your work with Fabric below, that even these few seconds can be reduced to merely a second, Yep! just a single command to have your website cum blog serving up. Isn't it interesting? Yeah, Carry on! 
+It saves a lot of considerable amount of time rather writing from the scratch. It's built-in features and plug-ins inspired me to work with it. After satisfying the requirements for the HYDE environment to be set up, it's hardly a matter of few seconds to have a full-structured working site on your local web server. You'll greatly appreciate the amount of time spent in serving up when you'll read about integrating your work with Fabric below, that even these few seconds can be reduced to merely a second, Yep! just a single command to have your website cum blog serving up. Isn't it interesting? Yeah, Carry on!
 
-Installation and Setup
++++++
+</div><div id="installation" class="section scrollspy  push-half--top">
++++++
+
+Installation and Setup <a href="#installation"><i class="fa fa-link  content-link"></i></a>
 ----------------------
 
-###using python-pip for installing
+**using python-pip for installing**
 
 {% syntax bash %}
 pip install hyde
 {% endsyntax %}
 
 
-###Creating a new hyde website (default layout for site)
+**Creating a new hyde website (default layout for site)**
 
 {% syntax bash %}
 hyde -s $PATH_TO_DIRECTORY create
@@ -45,24 +64,24 @@ hyde create  		   # and create default layout
 
 # if you switch to created/cw directory, following subdirectories would be created.
 
-content  info.yaml  layout  README.markdown  site.yaml 
+content  info.yaml  layout  README.markdown  site.yaml
 {% endsyntax %}
 
-###Generating Site
+####Generating Site
 After editing and modifying the layout, site is generated
 
 {% syntax bash%}
 hyde gen  # will create a folder named 'deploy' inside current dir
 {% endsyntax %}
 
-###Serve the site
+**Serve the site**
 Finally start the built in web server that also regenerates based on the request if there are changes.
 {% syntax bash %}
 hyde serve
 {% endsyntax%}
 
-###Publish the site
-Publishes the site based on configuration. Currently the only supported publishing target is a git repository. 
+**Publish the site**
+Publishes the site based on configuration. Currently the only supported publishing target is a git repository.
 {% syntax bash %}
 hyde publish -p github
 {% endsyntax %}
@@ -80,31 +99,35 @@ Not many people enjoy executing a series of line-by-line commands, which they re
 
 {% syntax python %}
 #!/usr/bin
-# fabfile.py 
+# fabfile.py
 
 from fabric.api import *
 import fabric.contrib.project as project
- 
+
 def clean():
   local('rm -rf ./deploy')
- 
+
 def gen():
   clean()
   local('hyde gen')
-  
+
 def serve():
   local('hyde serve')
- 
+
 def cgs():
   gen()
   serve()
-{% endsyntax %} 
+{% endsyntax %}
 {% syntax bash %}
 fab clean # removes the deploy dir build during generation
 fab cgs # cleaning, re-generating and serving
 {% endsyntax %}
 
-YAML
++++++
+</div><div id="yaml" class="section scrollspy  push-half--top">
++++++
+
+YAML <a href="#yaml"><i class="fa fa-link  content-link"></i></a>
 ----
 
 **YAML: YAML Ain't Markup Language**
@@ -113,8 +136,11 @@ YAML
 
 *site.yaml* indicates how some local file directories are translated to paths for the web server, specifies plug-ins to be used like '*meta.TaggerPlugin*', '*text.SyntextPlugin*', etc. and provides basic metadata.
 
++++++
+</div><div id="markdown" class="section scrollspy  push-half--top">
++++++
 
-Markdown
+Markdown <a href="#markdown"><i class="fa fa-link  content-link"></i></a>
 --------
 
 HYDE builds in a processor that allows you to author web pages in Markdown rather than HTML. Markdown is a lightweight markup language, which helps in avoiding hand-authoring HTML, and edit just plain text using special characters to indicate the various HTML markup constructs, and finally converts that plain text formatting to HTML.
@@ -139,7 +165,7 @@ The **dream** is not *what you see in sleep*,
 2. Determination
 3. The Means
 {% endsyntax%}
- 
+
 
 will be converted to :
 
@@ -165,15 +191,19 @@ will be converted to :
 
 You can try it out online **[Dingus](http://daringfireball.net/projects/markdown/dingus)**
 
-HYDE Syntax Highlighting Plugin
++++++
+</div><div id="syntaxHighlight" class="section scrollspy  push-half--top">
++++++
+
+HYDE Syntax Highlighting Plugin <a href="#syntacHighlight"><i class="fa fa-link  content-link"></i></a>
 -------------------------------
 
 Ah, HYDE's built-in plugin [Pygments]() and syntax tag for Syntax Highlighting is just beautiful. It not only makes the code readable but also push **<span style="color:#F92672;">colour</span>ful** pixels to your site. Put the following code along with your **Markdown** code *(as discussed above)* to enjoy the Syntax Highlighting for several programming languages.
 
 Replace 'lang_name' in the code below with the programming language in order to highlight its syntax. For eg- css, HTML, python, etc. Here lang_name corresponds to **python**.
 
-{% syntax text %}  
-{{ '{% syntax lang_name %}' }} 
+{% syntax text %}
+{{ '{% syntax lang_name %}' }}
 def main():
   print("Hello World!");
 
@@ -181,8 +211,11 @@ def main():
 
 {% endsyntax %}
 
++++++
+</div><div id="templating" class="section scrollspy  push-half--top">
++++++
 
-Templates and Jinja2
+Templates and Jinja2<a href="#templating"><i class="fa fa-link  content-link"></i></a>
 --------------------
 
 A template is simply a text file. It can generate any text-based format (HTML, XML, CSV, etc.).
@@ -191,7 +224,7 @@ A template contains variables, which get replaced with values when the template 
 
 Jinja2 is a modern and designer friendly templating language for Python, modelled after Django’s templates. It is fast, widely used and secure with the optional sandboxed template execution environment.
 
-The templates go in the *layout* directory, and you add and update templates there to manipulate the overall content outline of your site. 
+The templates go in the *layout* directory, and you add and update templates there to manipulate the overall content outline of your site.
 
 Below is a minimal template that illustrates a few basics.
 
@@ -211,7 +244,7 @@ Below is a minimal template that illustrates a few basics.
    {{ "{% endfor %}" }}
 </ul>
 
-    
+
 {{ "{% block content %}" }}
 {{ "{% endblock %}" }}
 
@@ -227,63 +260,74 @@ Full documentation can be found on [Jinja2 Docs](http://jinja.pocoo.org/docs/tem
 
 I found this *template* engine quite interesting to use. A template allows to express most of the replicated entries in each HTML page only once, which is often called as **base template** of the whole site, and is automatically applied to all the pages which inherit them, often called as **child template**.
 
-Layout
++++++
+<div id="layout" class="section scrollspy  push-half--top">
++++++
+
+Layout <a href="#layout"><i class="fa fa-link  content-link"></i></a>
 ------
 
 <div id="hyde-layout">
-<i class="icon-folder-open" style="color:#99BBD6;font-size:30px;"></i><span style="font-size:20px;"> content</span><br />
+<i class="fa fa-folder-open" style="color:#99BBD6;font-size:30px;"></i><span style="font-size:20px;"> content</span><br />
 
 <div id="sub-folder">
-<i class="icon-folder-open" style="color:#99BBD6;"></i>blog<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;"></i>blog<br />
 
 <div id="sub-folder">
-<i class="icon-folder-open" style="color:#99BBD6;"></i>tags<br />
-<i class="icon-file" style="color:#444444;"></i>index.yaml<br />
-<i class="icon-file" style="color:#444444;"></i>meta.yaml<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;"></i>tags<br />
+<i class="fa fa-file" style="color:#444444;"></i> index.yaml<br />
+<i class="fa fa-file" style="color:#444444;"></i> meta.yaml<br />
 </div>
 
-<i class="icon-folder-open" style="color:#99BBD6;"></i>media<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;"></i>media<br />
 
 <div id="sub-folder">
-<i class="icon-folder-open" style="color:#99BBD6;"></i>css<br />
-<i class="icon-folder-open" style="color:#99BBD6;"></i>images<br />
-<i class="icon-folder-open" style="color:#99BBD6;"></i>js<br />
-<i class="icon-file" style="color:#444444;"></i>meta.yaml<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;"></i>css<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;"></i>images<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;"></i>js<br />
+<i class="fa fa-file" style="color:#444444;"></i>meta.yaml<br />
 </div>
 
-<i class="icon-folder-open" style="color:#99BBD6;"></i>portfolio<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;"></i>portfolio<br />
 
 <div id="sub-folder">
-<i class="icon-file" style="color:#444444;"></i>index.html<br />
+<i class="fa fa-file" style="color:#444444;"></i> index.html<br />
 </div>
 
-<i class="icon-file" style="color:#444444;"></i>about.html<br />
-<i class="icon-file" style="color:#444444;"></i>favocin.ico<br />
-<i class="icon-file" style="color:#444444;"></i>index.html<br />
+<i class="fa fa-file" style="color:#444444;"></i> about.html<br />
+<i class="fa fa-file" style="color:#444444;"></i> favocin.ico<br />
+<i class="fa fa-file" style="color:#444444;"></i> index.html<br />
 </div>
 
-<i class="icon-folder-open" style="color:#99BBD6;font-size:30px;"></i> deploy<br />
-<i class="icon-folder-open" style="color:#99BBD6;font-size:30px;"></i> layout<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;font-size:30px;"></i> deploy<br />
+<i class="fa fa-folder-open" style="color:#99BBD6;font-size:30px;"></i> layout<br />
 
 <div id="sub-folder">
-<i class="icon-file" style="color:#444444;"></i>analytics.j2<br />
-<i class="icon-file" style="color:#444444;"></i>atom.j2<br />
-<i class="icon-file" style="color:#444444;"></i>base.j2<br />
-<i class="icon-file" style="color:#444444;"></i>blog.j2<br />
-<i class="icon-file" style="color:#444444;"></i>devmode.j2<br />
-<i class="icon-file" style="color:#444444;"></i>listing.j2<br />
-<i class="icon-file" style="color:#444444;"></i>macros.j2<br />
-<i class="icon-file" style="color:#444444;"></i>tagged_posts.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> analytics.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> atom.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> base.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> blog.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> devmode.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> listing.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> macros.j2<br />
+<i class="fa fa-file" style="color:#444444;"></i> tagged_posts.j2<br />
 </div>
 
-<i class="icon-file" style="color:#444444;"></i>info.yaml<br />
-<i class="icon-file" style="color:#444444;"></i>README.markdown<br />
-<i class="icon-file" style="color:#444444;"></i>site.yaml<br />
+<i class="fa fa-file" style="color:#444444;"></i> info.yaml<br />
+<i class="fa fa-file" style="color:#444444;"></i> README.markdown<br />
+<i class="fa fa-file" style="color:#444444;"></i> site.yaml<br />
 
 </div>
 
-Content
++++++
+</div><div id="content" class="section scrollspy  push-half--top">
++++++
+
+Content <a href="#content"><i class="fa fa-link  content-link"></i></a>
 -------
 
-This is the directory where static files such as images, stylsheets and script-files are stored in order to serve the site. This folder is the foundation for providing the structure to the site. HTML page files starts with the page metadata and then inherit the code (*as stored in jinja files with .j2 ext *) from the *layout* directory. 
+This is the directory where static files such as images, stylsheets and script-files are stored in order to serve the site. This folder is the foundation for providing the structure to the site. HTML page files starts with the page metadata and then inherit the code (*as stored in jinja files with .j2 ext *) from the *layout* directory.
 
++++++
+</div>
++++++
