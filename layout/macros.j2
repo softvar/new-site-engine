@@ -1,55 +1,63 @@
+{# To show latest 20 posts with excerpt #}
 {% macro render_excerpt(res, class=None) %}
-{% refer to res.url as post %}
-<article {{'class='~class if class }}>
-<h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
-<a href="{{ content_url(res.url) }}">{{ post.image|markdown|typogrify }}</a>
-{{ post.excerpt|markdown|typogrify }}
-<h4 class="read_more"><a href="{{ content_url(res.url) }}">Read More...</a></h4>
-<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
-</time>
-</article>
+    {% refer to res.url as post %}
+    <article {{'class='~class if class }}>
+        <h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
+        <a href="{{ content_url(res.url) }}">{{ post.image|markdown|typogrify }}</a>
+        {{ post.excerpt|markdown|typogrify }}
+        <h4 class="read_more"><a href="{{ content_url(res.url) }}">Read More...</a></h4>
+        <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+            Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+        </time>
+    </article>
 {% endmacro %}
 
-{% macro render_excerpt_blog(res, class=None) %}
-{% refer to res.url as post %}
-<article {{'class='~class if class }}>
-
-
-<span id="h4_size" ><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></span>
-</br>
-<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
-</time>
-
-</article>
+{# To list down all the blogs year-wise :: Archive #}
+{% macro render_excerpt_blog(res, class=None, year) %}
+    {% refer to res.url as post %}
+    <article {{'class='~class if class }}>
+        <span id="h4_size" ><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></span>
+        <div style="color:#bdbdbd;">
+            {% if year == 2015 %}
+                <span id='{{res.url}}'></span>
+                <script type="text/javascript">
+                    document.getElementById('{{ res.url }}').innerHTML = '<i class="fa fa-clock-o"></i> ' + (moment('{{ res.meta.created }}').fromNow()) + ' ';
+                </script>
+            {% endif %}
+           <i class="fa fa-bookmark"></i> <span>{{ res.meta.readTime }} min read</span>
+        </div>
+        {#</br>
+        <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+            Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+        </time>#}
+    </article>
 {% endmacro %}
 
 {% macro render_nav(menu, cls=None) -%}
-{% if menu -%}
-<nav {{'class='~cls if cls }}>
-    <ul>
-        {% for item in menu -%}
-        {% set active = False -%}
-        {% if item.type == 'page' -%}
-            {% set active = (resource.url ==
-                site.content.resource_from_relative_path(item.url).url) -%}
-        {% else -%}
-            {% set active = (node ==
-                site.content.node_from_relative_path(item.url)) -%}
-        {%- endif %}
-        {% set classes = ['button', 'white'] -%}
-        {% do classes.append('active') if active -%}
-        {% do classes.append(item.css_class) if item.css_class -%}
-        <li>
-            <a title="{{ item.description }}"
-                class="{{ classes|join(' ') }}"
-                href="{{ content_url(item.url) }}">
-                {{ item.name }}
-            </a>
-        </li>
-        {%- endfor %}
-    </ul>
-</nav>
-{%- endif %}
+    {% if menu -%}
+        <nav {{'class='~cls if cls }}>
+            <ul>
+                {% for item in menu -%}
+                {% set active = False -%}
+                {% if item.type == 'page' -%}
+                    {% set active = (resource.url ==
+                        site.content.resource_from_relative_path(item.url).url) -%}
+                {% else -%}
+                    {% set active = (node ==
+                        site.content.node_from_relative_path(item.url)) -%}
+                {%- endif %}
+                {% set classes = ['button', 'white'] -%}
+                {% do classes.append('active') if active -%}
+                {% do classes.append(item.css_class) if item.css_class -%}
+                <li>
+                    <a title="{{ item.description }}"
+                        class="{{ classes|join(' ') }}"
+                        href="{{ content_url(item.url) }}">
+                        {{ item.name }}
+                    </a>
+                </li>
+                {%- endfor %}
+            </ul>
+        </nav>
+    {%- endif %}
 {%- endmacro %}

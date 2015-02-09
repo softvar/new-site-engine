@@ -1,14 +1,29 @@
-{% extends "base.j2" %}
+{% extends "blog.j2" %}
+
+{% block parallax_image %}
+  <div class="parallax-container">
+    <div class="parallax"><img class="" id="slide-image-1" src="http://cdn.business2community.com/wp-content/uploads/2014/12/blog-pic-b2c.jpg"></div>
+  	{% block loader %}
+    	{{ super() }}
+    {% endblock loader %}
+  </div>
+{% endblock parallax_image %}
+
 {% from "macros.j2" import render_excerpt_blog with context  %}
-{% block main %}
-<!-- {% block page_title %}<h1 class="title">{{ resource.meta.title }}</h1>{% endblock %}  -->
+	{% block main %}
+		<!-- {% block page_title %}<h1 class="title">{{ resource.meta.title }}</h1>{% endblock %}  -->
+		<h1 style="text-align:center;color:#5ba4e5;">Archive - Curated list of my writings.</h1>
 
-<ul class="listing_blog clear">
+		{% set years = range(2015, 2012, -1) -%}
+		{% for year in years -%}
+			<span class="blog-year">{{ year }}</span>
+			<ol class="listing_blog clear">
+				{% for res in site.content.walk_resources_sorted_by_time() if res.meta.created.year == year -%}
+				<li>
+			    	{{ render_excerpt_blog(res, '', year) }}
+				</li>
+				{%- endfor %}
+			</ol>
+		{% endfor %}
 
-{% for res in resource.node.walk_resources_sorted_by_time() %}
-<li>
-    {{ render_excerpt_blog(res) }}
-</li>
-{% endfor %}
-</ul>
-{% endblock %}
+	{% endblock %}
