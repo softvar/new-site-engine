@@ -6,26 +6,10 @@ default_block: test
 listable: false
 ---
 
-
-{% block navi %}
-<div id="nav-main">
-
-            <ul class="nav nav-pills">
-
-              <li><a href="{{ content_url('about.html') }}">About</a></li>
-              <li><a class="active" href="{{ content_url('blog/') }}">Archive</a></li>
-              <li><a href="{{ content_url('portfolio/') }}">Projects</a></li>
-              <li><a href="mailto:varun2902@gmail.com">Contact</a></li>
-            </ul>
-            
-            </div>
-{% endblock %}
-
-
 {% block all %}
-<div class="browse_all">
-<i class="icon-angle-left"></i><i class="icon-angle-left"></i>
- <a href="/blog">  Browse All posts  </a>
- <i class="icon-angle-right"></i><i class="icon-angle-right"></i>
-</div>
+	<div class="browse_all">
+		<i class="icon-angle-left"></i><i class="icon-angle-left"></i>
+		<a class="waves-effect waves-blur blue lighten-1 btn" href="/archive">  Browse All posts  </a>
+		<i class="icon-angle-right"></i><i class="icon-angle-right"></i>
+	</div>
 {% endblock %}

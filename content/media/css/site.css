@@ -414,7 +414,7 @@ h1.title{
 
 }
 
-section.content{
+section.content {
    padding: 12px;
    margin-top: 20px;
    z-index: 102;
@@ -455,10 +455,10 @@ section.content{
 
 .listing li p{
 
-    line-height: 20px;
+    line-height: 22px;
     margin-bottom: 12px;
-    font-size: 18px;
-    color: #3A3A3A;
+    font-size: 17px;
+    color: #444;
     font-family: 'Lato', sans-serif;font-family: 'Bitter', serif;
 
 	text-align:justify;
@@ -479,7 +479,7 @@ section.content{
 
 .listing time{
     display:block;
-    border-bottom: 1px solid #aaaaaa;border-bottom: 2px solid #424242;
+    border-bottom: 2px solid #D7D7D7;
     padding-bottom: 4px;
     font-size: 14px;
     color: #484848;
@@ -585,15 +585,14 @@ section.content{
 	background: #F8F8F8;
 }
 article.post p{
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Lato', sans-serif;font-family: 'Bitter', serif;
-    line-height: 37px;
-	text-align:justify;
-	text-justify:inter-word;
-    margin: 6px 0;color: #333333;
-
+  font-size: 18px;
+  font-family: 'Bitter', serif;
+  line-height: 37px;
+  text-align:justify;
+  text-justify:inter-word;
+  margin: 6px 0;color: #333333;
 }
+
 article.post h6{
     font-size: 29px;
 }
@@ -602,6 +601,11 @@ article.post img{
     margin-bottom: 24px;
     height: 200px;
 }
+article.post a:hover {
+  border-bottom: 1px solid #f00;
+  transition: all 0.2s ease 0.2s;
+}
+
 .read_more a{
     color: #FF5151;
     transition: all 0.5s ease 0.1s;
@@ -652,10 +656,10 @@ ul.tags li a:hover{
 
 h1 a, h2 a, h3 a{
     text-decoration: none;
-    color: #5ba4e5;
+    color: #2196f3;
     transition: all 0.5s ease 0.1s;
     font-size: 25px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding: -12px;
 
 }
@@ -935,6 +939,7 @@ text-decoration: none;
 	background: #e9f2ff;
   border: 1px solid #5298fc;
 	padding: 20px;
+  color: #000080;
 }
 
 #sub-folder {
@@ -947,7 +952,7 @@ text-decoration: none;
   line-height: 18px;
   font-style: Verdana;
   word-wrap: break-word;
-  color: #777;
+  color: #222;
 }
 
 

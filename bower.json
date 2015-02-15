@@ -4,8 +4,7 @@
   "dependencies": {
     "jquery": "latest",
     "font-awesome": "latest",
-    "materialize": "latest",
-    "countable": "latest"
+    "materialize": "latest"
   },
   "description": "Personal website + blogging",
   "keywords": [

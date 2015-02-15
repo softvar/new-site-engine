@@ -66,18 +66,6 @@ description: Find me on social networking sites, send me an email
         $('body').on('click', '.all-body-click-region', function() {
           $.sidr('close');
         });
-        $('#email').keyup(function () {
-        	console.log($('#email').val())
-			if ($(this).val()) {
-				$('.submit-form').css({'display': 'block'});
-			}
-			else {
-				$('.submit-form').css({'display': 'none'});
-			}
-		});
-		$('.submit-form').click(function () {
-			$(this).attr('href', 'mailto:varun2902@gmail.com?subject=Enquiring&body=' + $('#feedback').val());
-		});
       });
     </script>
   {% endblock specialScripts %}

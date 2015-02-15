@@ -139,17 +139,20 @@ shortcut = {
       }
     },
      shortcut.add("Ctrl+U",function(){
-     //alert('Sorry\nSource code shortly coming...')
+      alert('Sorry\nSource code shortly coming...')
     }),
      shortcut.add("Ctrl+S",function(){
-     //alert('Sorry\nOops save disabled')
+     alert('Sorry\nOops save disabled')
+    }),
+     shortcut.add("Meta+S",function(){
+     alert('Sorry\nOops save disabled')
     }),
      shortcut.add("Meta+Alt+U",function(){
-     //alert('Sorry\nNo Command+Option+U is allowed. Be creative!')
+     alert('Sorry\nNo Command+Option+U is allowed. Be creative!')
     });
-    /*shortcut.add("Ctrl+C",function(){
-     //alert('Sorry\nNever duplicate this article...')
+    shortcut.add("Ctrl+C",function(){
+     alert('Sorry\nNever duplicate this article...')
     }),
     shortcut.add("Meta+C",function(){
-     //alert('Sorry\nNever duplicate this article...')
-    });*/
+     alert('Sorry\nNever duplicate this article...')
+    });

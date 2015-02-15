@@ -20,36 +20,6 @@
 }
 
 
-a .icon-stackexchange, .icon-github, .icon-linkedin, .icon-twitter {
-text-decoration: none;
-}
-.icon-stackexchange, .icon-github, .icon-linkedin, .icon-twitter {
-color: #C0C0C0; 
-margin-left: 15px;
-transition: all 0.5s ease 0.2s;
-text-decoration: none;
-}
-
-.icon-linkedin:hover {
-  color: #65B7D2;
-  text-decoration: none;
-}
-.icon-twitter:hover {
-color: #45B0E3;
-text-decoration: none;
-}
-
-.icon-stackexchange:hover {
-color: #FF8A1B;
-text-decoration: none;
-}
-
-.icon-github:hover {
-color: #333333;
-text-decoration: none;
-}
-
-
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -84,7 +54,7 @@ text-decoration: none;
 
 .well{
   background: #6BAF77
-  
+
 }
 .sidebar-nav > .sidebar-brand {
   height: 65px;
@@ -119,7 +89,7 @@ text-decoration: none;
 }
 
 .owner {
-  
+
   font-size: 70px;
   font-family: sans-serif, helvetica, Arial;
   color: #433333;
@@ -139,9 +109,9 @@ text-decoration: none;
 
 #navi {
   margin-top: 100px;
- 
+
   margin-left: 100px;
-  margin-right: 100px;  
+  margin-right: 100px;
   border-top: 2px solid #DEDEDC;
   border-bottom: 2px solid #DEDEDC;
 }
@@ -154,7 +124,7 @@ text-decoration: none;
   font-size: 27px;
   margin-left:35px;
   transition: all 0.5s ease 0.1s;
-  
+
 }
 
 #navi li a:hover {
@@ -162,57 +132,6 @@ text-decoration: none;
   color: #3C3F3D;
   border-bottom: 2px solid #6BAF77;
 
-}
-
-footer {
-padding-top: 3px;
-}
-.footer-text {
-text-align: center;
-padding: 5px;
-font-size: 16px;
-font-family: 'Lato', sans-serif;font-family: 'Bitter', serif;
-}
-
-#social-icons {
-	margin-top: 35px;
-}
-
-#social-icons a {
-  text-decoration: none;
-}
-
-.linkedin {
-display: inline-block;
-background: url(../img/social/linkedin.png);
-width: 48px;
-height: 48px;
-}
-
-.linkedin:hover {
-	background: url(../img/grey/linkedin.png);
-}
-
-.twitter {
-display: inline-block;
-background: url(../img/social/twitter.png);
-width: 48px;
-height: 48px;
-}
-
-.twitter:hover {
-	background: url(../img/grey/twitter.png);
-}
-
-.github {
-display: inline-block;
-background: url(../img/social/github.png);
-width: 48px;
-height: 48px;
-}
-
-.github:hover {
-	background: url(../img/grey/github.png);
 }
 
 @media (max-width:767px) {
@@ -273,7 +192,7 @@ height: 48px;
 
 h1.owner {
   width: 100%;
-  
+
 }
 
 h1.owner a{
@@ -301,6 +220,7 @@ h1.owner a{
 
 footer{
   width: 100%;
+  background: #fff;
 }
 
 #container{
@@ -374,7 +294,7 @@ BOOTSTRAP COPYING
 
 .nav-pills > li {
   float: left;
-   
+
 }
 
 .nav-pills > li > a {
@@ -394,7 +314,7 @@ BOOTSTRAP COPYING
 .nav-pills > li.active > a:focus {
   color: #ffffff;
   background-color: #428bca;
-  
+
 }
 
 

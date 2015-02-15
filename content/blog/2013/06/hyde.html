@@ -15,11 +15,11 @@ toc:
     - installation
     - yaml
     - markdown
-    - syntaxHighlight
+    - syntax--highlight
     - templating
     - layout
     - content
-tweetShortUrl: https://bit.ly/16ayuHO
+tweetShortUrl: https://bit.ly/1zWUotn
 
 ---
 
@@ -58,12 +58,12 @@ pip install hyde
 
 {% syntax bash %}
 hyde -s $PATH_TO_DIRECTORY create
-	# or
+# or
 cd 'PATH_TO_DIRECTORY' # change to dir
-hyde create  		   # and create default layout
+hyde create  		       # and create default layout
 
 # if you switch to created/cw directory, following subdirectories would be created.
-
+ls
 content  info.yaml  layout  README.markdown  site.yaml
 {% endsyntax %}
 
@@ -87,10 +87,10 @@ hyde publish -p github
 {% endsyntax %}
 {% syntax yaml %}
 publisher:
-        github:
-            type: hyde.ext.publishers.dvcs.Git
-            path: ../hyde.github.com
-            url: git@github.com:hyde/hyde.github.com.git
+    github:
+        type: hyde.ext.publishers.dvcs.Git
+        path: ../hyde.github.com
+        url: git@github.com:hyde/hyde.github.com.git
 {% endsyntax %}
 
 The above steps i.e removing *deploy* dir, generating and serving can be combined under one hood, using python awesome library [fabric](http://docs.fabfile.org/en/1.6/). It's a command-line tool and it provides a basic suite of operations for executing local or remote shell commands (normally or via sudo) and uploading/downloading files.
@@ -120,7 +120,7 @@ def cgs():
 {% endsyntax %}
 {% syntax bash %}
 fab clean # removes the deploy dir build during generation
-fab cgs # cleaning, re-generating and serving
+fab cgs   # cleaning, re-generating and serving
 {% endsyntax %}
 
 +++++
@@ -183,30 +183,29 @@ will be converted to :
 <h2>Three simple steps to succeed</h2>
 
 <ol>
-<li>Knowledge</li>
-<li>Determination</li>
-<li>The Means</li>
+  <li>Knowledge</li>
+  <li>Determination</li>
+  <li>The Means</li>
 </ol>
 {% endsyntax %}
 
 You can try it out online **[Dingus](http://daringfireball.net/projects/markdown/dingus)**
 
 +++++
-</div><div id="syntaxHighlight" class="section scrollspy  push-half--top">
+</div><div id="syntax--highlight" class="section scrollspy  push-half--top">
 +++++
 
-HYDE Syntax Highlighting Plugin <a href="#syntacHighlight"><i class="fa fa-link  content-link"></i></a>
+HYDE Syntax Highlighting Plugin <a href="#syntax--highlight"><i class="fa fa-link  content-link"></i></a>
 -------------------------------
 
 Ah, HYDE's built-in plugin [Pygments]() and syntax tag for Syntax Highlighting is just beautiful. It not only makes the code readable but also push **<span style="color:#F92672;">colour</span>ful** pixels to your site. Put the following code along with your **Markdown** code *(as discussed above)* to enjoy the Syntax Highlighting for several programming languages.
 
 Replace 'lang_name' in the code below with the programming language in order to highlight its syntax. For eg- css, HTML, python, etc. Here lang_name corresponds to **python**.
 
-{% syntax text %}
+{% syntax jinja %}
 {{ '{% syntax lang_name %}' }}
-def main():
-  print("Hello World!");
-
+  def main():
+    print("Hello World!");
 {{ '{% endsyntax %}' }}
 
 {% endsyntax %}
@@ -237,21 +236,21 @@ Below is a minimal template that illustrates a few basics.
   {{ "{% endblock %}" }}
 </head>
 <body>
+  <ul id="navigation">
+     {{ "{% for item in navigation %}" }}
+          <li><a href="{{ '{item.href}' }}">{{ "{{item.caption}}" }}</a></li>
+     {{ "{% endfor %}" }}
+  </ul>
 
-<ul id="navigation">
-   {{ "{% for item in navigation %}" }}
-        <li><a href="{{ '{item.href}' }}">{{ "{{item.caption}}" }}</a></li>
-   {{ "{% endfor %}" }}
-</ul>
+  {{ "{% block content %}" }}
+    {{ "{{ super() }}" }} # inheriting from parent/base
+  {{ "{% endblock content %}" }}
 
 
-{{ "{% block content %}" }}
-{{ "{% endblock %}" }}
+  {{ "{% block footer %}" }}
+      &copy; Copyright 2008 by <a href="http://domain.invalid/">you</a>.
+  {{ "{% endblock footer %}" }}
 
-
-{{ "{% block footer %}" }}
-    &copy; Copyright 2008 by <a href="http://domain.invalid/">you</a>.
-{{ "{% endblock %}" }}
 </body>
 </html>
 {% endsyntax %}
@@ -261,7 +260,7 @@ Full documentation can be found on [Jinja2 Docs](http://jinja.pocoo.org/docs/tem
 I found this *template* engine quite interesting to use. A template allows to express most of the replicated entries in each HTML page only once, which is often called as **base template** of the whole site, and is automatically applied to all the pages which inherit them, often called as **child template**.
 
 +++++
-<div id="layout" class="section scrollspy  push-half--top">
+</div><div id="layout" class="section scrollspy  push-half--top">
 +++++
 
 Layout <a href="#layout"><i class="fa fa-link  content-link"></i></a>

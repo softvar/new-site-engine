@@ -18,13 +18,13 @@
     <article {{'class='~class if class }}>
         <span id="h4_size" ><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></span>
         <div style="color:#bdbdbd;">
+           <i class="fa fa-bookmark"></i> <span>{{ res.meta.readTime }} min read</span>
             {% if year == 2015 %}
                 <span id='{{res.url}}'></span>
                 <script type="text/javascript">
                     document.getElementById('{{ res.url }}').innerHTML = '<i class="fa fa-clock-o"></i> ' + (moment('{{ res.meta.created }}').fromNow()) + ' ';
                 </script>
             {% endif %}
-           <i class="fa fa-bookmark"></i> <span>{{ res.meta.readTime }} min read</span>
         </div>
         {#</br>
         <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">

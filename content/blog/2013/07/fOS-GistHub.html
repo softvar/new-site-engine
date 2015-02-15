@@ -19,6 +19,7 @@ toc:
   - view-gist
   - create-gist
   - search-and-others
+tweetShortUrl: https://bit.ly/1zWUVeG
 readTime: 5
 ---
 
@@ -70,22 +71,20 @@ A User can Login into the app using his Github email-id/username along with the 
 <span style="font-weight:bold;color:black;text-align:center;">Initialize Database</span>
 
 {% syntax javascript %}
-initializeDB:function initializeDB(){
-var notes="";
-var objectStore = this.database.transaction("notes").objectStore("notes");
+initializeDB: function initializeDB() {
+  var notes = '',
+    objectStore = this.database.transaction('notes').objectStore('notes'),
+    objectStore = this.database.transaction('notes').objectStore('notes');
 
+  objectStore.openCursor().onsuccess = function (event) {
+    var cursor = event.target.result;
 
-var objectStore = this.database.transaction("notes").objectStore("notes");
-objectStore.openCursor().onsuccess = function(event) {
-  var cursor = event.target.result;
-
-  if (cursor) {
-    //... Already logged in, do stuff and redirect
-    location.href = "view_gists.html";
-    cursor.continue();
-  }
-
-};
+    if (cursor) {
+      //... Already logged in, do stuff and redirect
+      location.href = 'view_gists.html';
+      cursor.continue();
+    }
+  };
 }
 {% endsyntax %}
 
@@ -94,55 +93,46 @@ objectStore.openCursor().onsuccess = function(event) {
 {% syntax javascript %}
 
 // function for saving the credentials after successful logging
-saveCredentials: function saveCredentials(username,password,UserImage,UserLogin) {
-	var note = {'name':username,'pass':password,'image':UserImage,'login':UserLogin};
+saveCredentials: function saveCredentials (username, password, UserImage, UserLogin) {
+  var note = {'name': username,'pass': password,'image': UserImage,'login': UserLogin},
+      transaction = this.database.transaction(['notes'], 'readwrite'),
+      objectStore = transaction.objectStore('notes'),
+      request=objectStore.put(note);
 
-
-
-var transaction = this.database.transaction(["notes"], "readwrite");
-var objectStore = transaction.objectStore("notes");
-var request=objectStore.put(note);
-request.onsuccess = function(event) {
-
-  location.href = "view_gists.html";
-};
+  request.onsuccess = function(event) {
+    location.href = 'view_gists.html';
+  };
 }
 
 // function to generate the BASIC Hash for authentication
 generateTokenHash: function generateTokenHash(user, password) {
-  var tok = user + ':' + password;
-  var hash = btoa(tok);
-
-  return "Basic " + hash;
+  var tok = user + ':' + password,
+      hash = btoa(tok);
+  return 'Basic ' + hash;
 },
 
 // AJAX call to test authorization
 loginNauth: function loginNauth(username,password) {
 
-var obj = new Object();
-obj = this;
+  var obj = new Object();
+  obj = this;
 
-
-      $.ajax({
-        url: 'https://api.github.com/user',
-        type: 'GET',
-        dataType: 'json',
-        beforeSend: function (xhr){
-        xhr.setRequestHeader('Authorization', obj.generateTokenHash(username,password));
+  $.ajax({
+    url: 'https://api.github.com/user',
+    type: 'GET',
+    dataType: 'json',
+    beforeSend: function (xhr){
+      xhr.setRequestHeader('Authorization', obj.generateTokenHash(username,password));
     }
-      })
-      .success( function(e) {
-
-		/* successfully logged in, parse the data,
-		   GET as JSON Object, and store for future refrences */
-
-        obj.saveCredentials(UserLogin,password,UserImage,UserLogin);
-      })
-      .error( function(e) {
-
-		    alert("Authentication Failed !");
-
-      })
+  })
+  .success( function(e) {
+    /* successfully logged in, parse the data,
+    GET as JSON Object, and store for future refrences */
+    obj.saveCredentials(UserLogin,password,UserImage,UserLogin);
+  })
+  .error( function(e) {
+    alert('Authentication Failed !');
+  })
 }
 {% endsyntax %}
 

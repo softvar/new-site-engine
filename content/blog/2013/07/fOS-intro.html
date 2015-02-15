@@ -12,6 +12,7 @@ toc:
   - gettingStarted
   - csp
   - links
+tweetShortUrl: https://bit.ly/1zWUFwk
 readTime: 3
 ---
 
@@ -61,9 +62,8 @@ Initialized my own load method named *init* as
 {% syntax javascript %}
 
 var Calculator = {
-	init: function init() {
+  init: function init() {
     document.addEventListener('mousedown', this);
-
   },
 };
 
@@ -84,19 +84,19 @@ Functions like onclick, onmousedown, and so on called within HTML file are restr
 {% syntax javascript %}
 
 handleEvent: function handleEvent(evt) {
-    this.target = 111 || evt.target;      // get the target/caller invoking it
-    var value = this.target.value; // get the value of attribute *value* of caller
-    var id = this.target.id;       // get the id of caller
+  this.target = 111 || evt.target; // get the target/caller invoking it
+  var value = this.target.value,   // get the value of attribute *value* of caller
+      id = this.target.id;         // get the id of caller
 
-    switch (this.target.dataset.type) {
-    	case 'submit': // check the data-type
-    		this.CALL_DESIRED_FUNCTION_NAME(*params*) // call event driven function
-    		break;
-    	/* all cases as per your data-type attribute goes here...
-		   don't forget to use *break;* unless more than one data-types
-		   need to behave similar on events   */
-    }
-},
+  switch (this.target.dataset.type) {
+    case 'submit': // check the data-type
+      this.CALL_DESIRED_FUNCTION_NAME(*params*) // call event driven function
+      break;
+      /* all cases as per your data-type attribute goes here...
+       don't forget to use *break;* unless more than one data-types
+       need to behave similar on events. */
+  }
+}
 {% endsyntax %}
 
 After adopting CSP rules, I headed towards designing my own *eval* method since it is restricted by CSP. Below is the code to execute valid arithmetic expressions without using the JavaScript function *eval()*.
@@ -105,57 +105,58 @@ Note: *this.disp.value* is containing the arithmetic expression given as an inpu
 
 {% syntax javascript %}
 compute: function compute() {
-
   var sign = 1;
-  if (this.disp.value[0] == '-') sign = -1;
+  if (this.disp.value[0] == '-') {
+    sign = -1;
+  }
+
   this.disp.value = this.calculate(this.disp.value,sign);
-
   return this.disp.value;
-  },
+},
 
-calculate: function calculate(input,sign){
-
-   var opr_list = { add : '+'
-           , sub : '-'
-           , div : '/'
-           , mlt : '*'
-           , mod : '%'
-           , pow : '^' };
+calculate: function calculate(input, sign) {
+   var opr_list = {
+      add : '+',
+      sub : '-',
+      div : '/',
+      mlt : '*',
+      mod : '%',
+      pow : '^'
+  };
 
    opr_list.opr = [[ [opr_list.mlt] , [opr_list.div] , [opr_list.mod]],
             [ [opr_list.add] , [opr_list.sub] , [opr_list.pow] ]];
 
    var input = input.replace(/[^0-9%^*\/()\-+.]/g,'');
-
    var output,n;
-   for(var i=0, n=opr_list.opr.length; i<n; i++ ) {
 
+   for(var i = 0, n = opr_list.opr.length; i < n; i++ ) {
       var re = new RegExp('(\\d+\\.?\\d*)([\\'+opr_list.opr[i].join('\\')+'])(\\d+\\.?\\d*)');
       re.lastIndex = 0;
-            while( re.test(input) ){
-
-		 output = this.compute_result(opr_list,sign*RegExp.$1,RegExp.$2,RegExp.$3);
-
-         if (isNaN(output) || !isFinite(output)) return output;
-         input  = input.replace(re,output);
+      while(re.test(input) ) {
+        output = this.compute_result(opr_list,sign*RegExp.$1,RegExp.$2,RegExp.$3);
+        if (isNaN(output) || !isFinite(output)) {
+          return output;
+        }
+        input  = input.replace(re,output);
       }
    }
 
    return output;
 },
 
-compute_result: function compute_result(opr_list,a,op,b){
-      a=a*1; b=b*1;
-      switch(op){
-         case opr_list.add: return a+b; break;
-         case opr_list.sub: return a-b; break;
-         case opr_list.div: return a/b; break;
-         case opr_list.mlt: return a*b; break;
-         case opr_list.mod: return a%b; break;
-         case opr_list.pow: return Math.pow(a,b); break;
-         default: null;
-      }
-   },
+compute_result: function compute_result (opr_list, a, op, b) {
+  a=a*1; b=b*1;
+  switch(op){
+    case opr_list.add: return a+b; break;
+    case opr_list.sub: return a-b; break;
+    case opr_list.div: return a/b; break;
+    case opr_list.mlt: return a*b; break;
+    case opr_list.mod: return a%b; break;
+    case opr_list.pow: return Math.pow(a,b); break;
+    default: null;
+  }
+}
 {% endsyntax %}
 
 +++++
