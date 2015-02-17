@@ -193,7 +193,21 @@
               <a href="#" class="tweet__url  tooltipped" data-position="right" data-tooltip="Share on Twitter"><i class="fa  fa-twitter  fa-2x" style="width: 39px;height: 40px;background: black;padding: 6px;z-index: 10000000;" ></i></a>
             </span>
 
+        <a class="prev{{' disabled' if not resource.next_by_time}}{{' tooltipped' if resource.next_by_time}}"
+            data-tooltip="{{ resource.next_by_time.meta.title }}"
+            data-position="top"
+            {% if resource.next_by_time %}
+            href="{{ content_url(resource.next_by_time.url) }}"{% endif %}>
+            Previous blogpost
+        </a>
 
+        <a class="next{{' disabled' if not resource.prev_by_time}}{{' tooltipped' if resource.prev_by_time}}"
+            data-tooltip="{{ resource.prev_by_time.meta.title }}"
+            data-position="top"
+            {% if resource.prev_by_time %}
+            href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>
+            Next blogpost
+        </a>
         {% block disqus %}
           <div class="hi">
             {% include "disqus.j2" %}
