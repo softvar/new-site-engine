@@ -1,5 +1,5 @@
 ---
-title: Hands on FIREFOX-OS Apps(CSP)
+title: Hands on Firefox-OS Apps - Introducing CSP
 description: >
     Smile. Laugh.
 created: !!timestamp '2013-07-01 00:00:00'
@@ -9,8 +9,8 @@ tags:
     - JavaScript
     - CSP
 toc:
-  - gettingStarted
-  - csp
+  - getting--started
+  - C--S--P
   - links
 tweetShortUrl: https://bit.ly/1zWUFwk
 readTime: 3
@@ -26,7 +26,7 @@ So the journey begins from here. I found an article to get started with developi
 Here it is! Beautiful official <a href="https://www.mozilla.org/en-US/firefox/os/" target="_blank">FIREFOX-OS</a> website.
 
 +++++
-<div id="gettingStarted" class="section scrollspy  push-half--top">
+<div id="getting--started" class="section scrollspy  push-half--top">
 +++++
 
 Getting started with FOS-App: Calculator <a href="#gettingStarted"><i class="fa fa-link  content-link"></i></a>
@@ -47,10 +47,10 @@ CSP is designed to be fully backward compatible; browsers that don't support it 
 eval() is one such Default_CSP_restriction and *was* also the core of my Calcultor app :)
 
 +++++
-</div><div id="csp" class="section scrollspy  push-half--top">
+</div><div id="C--S--P" class="section scrollspy  push-half--top">
 +++++
 
-Dealing with CSP <a href="#csp"><i class="fa fa-link  content-link"></i></a>
+Dealing with CSP <a href="#C--S--P"><i class="fa fa-link  content-link"></i></a>
 ----------------
 
 Include **'use strict'** in your script files. Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a "strict" operating context. This strict context prevents certain actions from being taken and throws more exceptions.
@@ -84,7 +84,7 @@ Functions like onclick, onmousedown, and so on called within HTML file are restr
 {% syntax javascript %}
 
 handleEvent: function handleEvent(evt) {
-  this.target = 111 || evt.target; // get the target/caller invoking it
+  this.target = evt.target; // get the target/caller invoking it
   var value = this.target.value,   // get the value of attribute *value* of caller
       id = this.target.id;         // get the id of caller
 
@@ -128,10 +128,10 @@ calculate: function calculate(input, sign) {
             [ [opr_list.add] , [opr_list.sub] , [opr_list.pow] ]];
 
    var input = input.replace(/[^0-9%^*\/()\-+.]/g,'');
-   var output,n;
+   var output, i, n, re;
 
-   for(var i = 0, n = opr_list.opr.length; i < n; i++ ) {
-      var re = new RegExp('(\\d+\\.?\\d*)([\\'+opr_list.opr[i].join('\\')+'])(\\d+\\.?\\d*)');
+   for(i = 0, n = opr_list.opr.length; i < n; i++ ) {
+      re = new RegExp('(\\d+\\.?\\d*)([\\'+opr_list.opr[i].join('\\')+'])(\\d+\\.?\\d*)');
       re.lastIndex = 0;
       while(re.test(input) ) {
         output = this.compute_result(opr_list,sign*RegExp.$1,RegExp.$2,RegExp.$3);
@@ -146,7 +146,7 @@ calculate: function calculate(input, sign) {
 },
 
 compute_result: function compute_result (opr_list, a, op, b) {
-  a=a*1; b=b*1;
+
   switch(op){
     case opr_list.add: return a+b; break;
     case opr_list.sub: return a-b; break;

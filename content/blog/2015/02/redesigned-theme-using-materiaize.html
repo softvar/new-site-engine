@@ -1,16 +1,19 @@
 ---
-title: Redesigned website using material design
+title: Redesigned website using Material Design
 description: >
     Smile. Laugh.
-created: !!timestamp '2015-02-10 01:40:00'
+created: !!timestamp '2015-03-01 02:30:00'
 tags:
     - materialize
     - material design
 toc:
     - introduction
+    - material--design--perspective
+    - getting--hands--dirty
+    - showcase
 
 tweetShortUrl: https://bit.ly/1zWXQUR
-readTime: 0
+readTime:
 ---
 
 +++++
@@ -18,12 +21,70 @@ readTime: 0
 +++++
 
 {% mark excerpt -%}
-Will be adding <em>how I redesigned this personal website using awesome <a href="http://materializecss.com/">Materialize</a> framework</em> soon.
+
+Few months back, Google introduced the visual language, a single underlying system that allows for a unified experience across platforms and device sizes - <a href="http://www.google.com/design/spec/material-design/introduction.html">Material Design</a>. Since then, I'm following it and my mind enthusiastically forces me to develop something using it. While I was researching, I came across an open-sourced framework, <a href="http://materializecss.com">materialize</a>, which I think is the now most popular one among all. I started digging deep into it on Github and it really inspired me in kick-starting to develop. Finally, I decided to re-design my personal website on a whim, whose frontend was earlier coded using bootstrap3, now on top of Material Design. I introduced many new features like *Kudo*ing blog-posts, *Table of Contents* & *Read time* for blog-post, *side-navigation-bar*, *share selected text on Twitter*, etc along with many improvements visually as well as technically.
+
 {%- endmark %}
 
 +++++
-</div>
+</div><div id="material--design--perspective" class="section scrollspy  push-half--top">
 +++++
+
+Material Design's perspective? <a href="#material--design--perspective"><i class="fa fa-link  content-link"></i></a>
+------------------------------
+
+<blockquote>
+We worked together - Android, Chrome and across all of Google - to craft one consistent vision for mobile, desktop and beyond.<br/>
+- Sundar Pichai, Senior Vice President
+</blockquote>
+
+Material Design was introduced to change the User Experience by incorporating the classic principles of good design with the innovation. The designs are not just visually appealing but also convey the meaning aptly.
+<img src="http://porhomme.com/wp-content/uploads/2014/06/google-material-design-android-chrome-os-web-1.jpg" style="height: 450px;width: 92%;margin: 0 auto;">
+
++++++
+</div><div id="getting--hands--dirty" class="section scrollspy  push-half--top">
++++++
+
+Getting my hands dirty <a href="#getting--hands--dirty"><i class="fa fa-link  content-link"></i></a>
+----------------------
+
+While my coffee was dipping off the mug, I was lucky enough to come across such a highly featured framework, materialize, where new features are still getting born. Please have a look at their [official website](http://materializecss.com) once, the team has provided a nice demo of each such feature. Since, the project was in its early developement stages, I found some bugs and decided to contribute, submitted a small patch: fixing a small CSS issue. The world of open sourcing has taken a veer drift, seriously, and it's worth mentioning here too :)
+
+Here's a list of features, the framework has the support for, and which I have implemented on my website:
+
+1. Full page Slider - on my [Home](http://softvar.github.io) Page
+1. Parallax plugin  - on each node page, eg. [blog](http://softvar.github.io/blog), [archive](http://softvar.github.io/archive) & [projects](http://softvar.github.io/portfolio)
+1. Pushpin plugin - for Table of Contents in my blogs
+1. ScrollSpy plugin - again for Table of Contents in my blogs
+1. Pre-loader(spinner) - while parallax-image is being getting rendered
+1. Tooltips - wherever required
+1. Toasts -  when someone kudos/unKodos my blogpost(similar to that of [svbtle](https://svbtle.com)).
+1. Card Reveal- for displaying my [projects'](http://softvar.github.io/portfolio) report-card.
+1. Icons, buttons and waves - wherever they fit precisely.
+
+<img src="{{ media_url('/images/showcase_site.png') }}" style="width:100%;height:450px;">
+
+Alright! Hope it would have triggered the same adrenaline rush, what I experienced once :)
+Apart from rendering those tiny engaging pixels, *I planned to implement some new features to my previously monotonic website*.
+
+1. Floating left Sidebar for all-in-one routes for the whole site-walk, ensuring no distractness while reading stuff.
+2. Table of Contents in each blog for section-to-section jump.
+3. Inherited the way of giving ***Kudos*** as a means of liking/take-away-something from blog-post, exactly what [svbtle-blog](https://svbtle.com) introduced. For this, I have used [Firebase](https://www.firebase.com/) for storing, fetching and displaying the unique counts.
+4. Select the text which you like the most while reading blog and share it on twitter with just a single click and no time-loss.
+5. Automatically calculate and generate the read time for every blog-post.
+6. Changing Syntax highlighting theme to match the site's theme, and to ensure better readibility.
+<img src="{{ media_url('/images/syntax__highlighting.png') }}" style="height:400px;">
+
+I have proudly used [hyde](http://ringce.com) for generating my website. Read this post on [Getting started with hyde](/blog/2013/06/hyde.html) to know more about it.
+
++++++
+</div><div id="showcase" class="section scrollspy  push-half--top">
++++++
+
+Good News - Showcase <a href="#showcase"><i class="fa fa-link  content-link"></i></a>
+--------------------
+
+I was more than lucky to get my site getting featured on the framework's official site in [showcase section](http://materializecss.com/showcase.html). Also, [Material Design Blog](http://materialdesignblog.com/5-brilliant-material-design-portfolios-to-inspire-you/) lists top five entries for Material Design inspirational websites, my being the first, yay! <i class="fa  fa-thumbs-up"></i>.
 
 
 

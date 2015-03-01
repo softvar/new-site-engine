@@ -14,7 +14,7 @@ description: Find me on social networking sites, send me an email
 
 {% block parallax_image %}
   <div class="parallax-container">
-    <div class="parallax"><img id="slide-image-1" src="http://cnjtc.com/wp-content/uploads/2013/06/paper-boats-origami-surface-retina-macbook-pro-wallpaper.jpg"></div>
+    <div class="parallax"><img id="slide-image-1" src="{{ media_url('/img/main__site_1.jpg') }}"></div>
     {% block loader %}
     	{{ super() }}
     {% endblock loader %}
@@ -56,7 +56,7 @@ description: Find me on social networking sites, send me an email
 {% endblock scripts %}
 
 {% block specialScripts %}
-	<script src="{{ media_url('js/libs/materialize.min.js') }}"></script>
+	<script src="{{ media_url('js/libs/custom-materialize.min.js') }}"></script>
     <script>
       $(document).ready(function() {
       	$('.slider').slider({height: 210, indicators: false, transition: 2000, interval: 3000});

@@ -52,7 +52,6 @@
        */
       var area = document.getElementById('main-countable-content');
       Countable.once(area, function (counter) {
-        console.log(this, counter);
          var wpm = 250,
             estimatedRaw = counter.words / wpm,
             minutes = Math.round(estimatedRaw);
@@ -127,7 +126,7 @@
       <div class="col s2">
           <div style="margin-top:400px;">
             <div style="">
-              <ul class="section table-of-contents" style="margin-top:200px;">
+              <ul class="section table-of-contents" style="margin-top:200px;width:151px;word-wrap:break-word;">
                 <li style="color:#222;font-weight:bold;padding-bottom:5px;">Table of Contents</li>
                 {% for toc in resource.meta.toc %}
                   <li><a href="#{{toc}}">{{ ' ' . join(toc.split('--')) | title }}</a></li>
@@ -152,7 +151,6 @@
             if ($('.table-of-contents').length) {
               if ($('.table-of-contents').length) {
                 var toc_offset = $('.table-of-contents').first().offset().top;
-                console.log(toc_offset)
                 $('.table-of-contents').each(function() {
                   var origin = $(this);
                   origin.pushpin({ top: toc_offset-200, bottom: $(document).height() - window.innerHeight });
