@@ -158,6 +158,9 @@
 
 		<!-- Materialize core JavaScript -->
 		<!-- Placed at the end of the document so the pages load faster -->
+		{% block analytics %}
+	      {% include "analytics.j2" %}
+	    {% endblock analytics %}
 		<script src="media/js/libs/custom-materialize.min.js"></script>
 		<script>
 			$(document).ready(function() {
