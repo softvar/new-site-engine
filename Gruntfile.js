@@ -28,7 +28,8 @@ module.exports = function (grunt) {
 					'content/media/js/libs/jquery.sidr.min.js',
 					'content/media/js/libs/modernizr-1.7.min.js',
 					'content/media/js/libs/materialize.min.js',
-					'content/media/js/libs/custom-materialize.min.js'
+					'content/media/js/libs/custom-materialize.min.js',
+					'content/media/js/libs/jquery.github.js'
 				],
 				dest: 'dist/js/<%= pkg.name %>.js'
 			},
