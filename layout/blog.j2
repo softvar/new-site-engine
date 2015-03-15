@@ -1,16 +1,12 @@
 {% extends "base.j2" %}
 
 {% block vendorCss %}
-  <link rel="stylesheet" href="{{ media_url('css/kudos.min.css') }}">
 {% endblock vendorCss %}
 
 {% block endhead %}
   <!-- Kudos script -->
   <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.1.2/firebase.js'></script>
-  <script type="text/javascript" src="{{ media_url('js/libs/kudos.min.js') }}"></script>
-  <script type="text/javascript" src="{{ media_url('js/libs/kudos.firebase.min.js') }}"></script>
-  <script type="text/javascript" src="{{ media_url('js/libs/countable.js') }}"></script>
-  <script type="text/javascript" src="{{ media_url('js/libs/moment.min.js') }}"></script>
+  <script src="{{ media_url('js/new-site-engine.blog.min.js') }}"></script>
 <!--   // <script type="text/javascript" src="{{ media_url('js/libs/no-crack.js') }}"></script> -->
 {% endblock endhead %}
 

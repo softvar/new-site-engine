@@ -31,6 +31,8 @@
 	font-size: 75px;
 	text-align: center;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+	color: #fff;
+  	border-bottom: none;
 }
 
 .anim--top {

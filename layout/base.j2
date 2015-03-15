@@ -40,27 +40,18 @@
   {% endblock favicons %}
 
   {% block css %}
-  <link rel="stylesheet" type="text/css" href="{{ media_url('css/materialize.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ media_url('css/new-site-engine.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ media_url('font-awesome/css/font-awesome.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ media_url('css/jquery.sidr.dark.css') }}">
 
   {% block vendorCss %}
   {% endblock vendorCss %}
 
-  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
-
-  <!-- Add custom CSS here -->
-  <link rel="stylesheet" type="text/css" href="{{ media_url('/css/custom.css') }}">
   {% endblock css %}
 
   {% block headjs %}
   <!-- All JavaScript at the bottom, except for Modernizr which
         enables HTML5 elements & feature detects -->
-    <script src="{{ media_url('js/libs/jquery.min.js') }}"></script>
-    <script src="{{ media_url('js/libs/jquery.sidr.min.js') }}"></script>
-    <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
-    <script src="{{ media_url('js/libs/jquery.scrollUp.min.js') }}"></script>
-    <script type="text/javascript" src="{{ media_url('/js/libs/materialize.min.js') }}"></script>
+    <script src="{{ media_url('js/new-site-engine.min.js') }}"></script>
     <!-- <script src="/media/js/libs/no-crack.js"></script> -->
 
 
@@ -138,7 +129,7 @@
       </a>
     </div>
 
-    <div id="sidr">
+    <div id="sidr" style="display:none;">
       <div class="container" style="margin-top:30px;width:90%;">
         <div class="slider">
           <ul class="slides">
@@ -218,17 +209,16 @@
 
   {% endblock js %}
   {% block loaderScript %}
-    <script type="text/javascript">
-      $(function () {
-        var firstSliderImage = document.getElementById('slide-image-1');
-        firstSliderImage.onload = function () {
-            $('.loader').css({'display':'none'})
-        };
-      })
-    </script>
+
   {% endblock loaderScript %}
   {% block specialScripts %}
-    <script src="{{ media_url('js/libs/custom-materialize.min.js') }}"></script>
+  <script type="text/javascript">
+      $(function () {
+        setTimeout(function () {
+          $('.loader').css({'display':'none'});
+        }, 1200);
+      })
+    </script>
     <script>
       $(document).ready(function() {
         var lastTopTwitterShareBtn, currentTopTwitterBtn;
