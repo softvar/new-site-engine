@@ -35,7 +35,6 @@ module.exports = function (grunt) {
 			},
 			'blog-js': {
 				src: [
-					'content/media/js/libs/firebase.js',
 					'content/media/js/libs/kudos.min.js',
 					'content/media/js/libs/kudos.firebase.min.js',
 					'content/media/js/libs/moment.min.js',
