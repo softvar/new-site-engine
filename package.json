@@ -1,0 +1,23 @@
+{
+    "name": "new-site-engine",
+    "version": "1.0.0",
+    "description": "Engine used to generate my website stuff",
+    "author": "Varun Malhotra",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/softvar/new-site-engine"
+    },
+    "bugs": {
+        "url": "https://github.com/softvar/new-site-engine/issues"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-cli": "~0.1.9",
+        "grunt-contrib-concat": "latest",
+        "grunt-contrib-cssmin": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-clean": "latest",
+        "grunt-contrib-copy": "latest"
+    }
+}
