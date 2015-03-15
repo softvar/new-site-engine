@@ -56,9 +56,11 @@ description: Find me on social networking sites, send me an email
 {% endblock scripts %}
 
 {% block specialScripts %}
-	<script src="{{ media_url('js/libs/custom-materialize.min.js') }}"></script>
     <script>
       $(document).ready(function() {
+        setTimeout(function () {
+          $('.loader').css({'display':'none'});
+        }, 1200);
       	$('.slider').slider({height: 210, indicators: false, transition: 2000, interval: 3000});
       	$('.tooltipped').tooltip({"delay": 50});
       	$('.parallax').parallax();
