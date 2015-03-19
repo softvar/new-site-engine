@@ -78,7 +78,8 @@ module.exports = function (grunt) {
 			main: {
 				files: [
 					// includes files within path and its sub-directories
-					{expand: true, cwd: 'dist', src: ['**/*'], dest: 'deploy/media'}
+					{expand: true, cwd: 'dist', src: ['**/*'], dest: 'deploy/media'},
+					{expand: true, cwd: 'content/media/css', src: ['heart_60x60.png'], dest: 'deploy/media/css'},
 				]
 			}
 		}
