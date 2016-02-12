@@ -1,0 +1,87 @@
+---
+title: Bitbar Plugins for Github and ProductHunt Recognition
+description: >
+    Track stars on Github repos and votes count on ProductHunt posts
+created: !!timestamp '2016-02-13 02:49:00'
+tags:
+    - bitbar
+    - bitbar-plugin
+    - ProductHunt
+    - Github
+toc:
+    - introduction
+    - bitbar--plugins
+    - showcase
+    - script--producthunt
+    - script--github
+
+tweetShortUrl: https://bit.ly/1zWXQUR
+readTime: 5
+---
+
++++++
+<div id="introduction" class="section scrollspy  push-half--top">
++++++
+
+{% mark excerpt -%}
+
+Few days back, a project named <a href="https://getbitbar.com/" target="blank">bitbar app</a> was launched, which lets you put the output from any script or program right in your Mac OS X menu bar. The app was trending on many famous sites like HackerNews, ProductHunt, Panda, etc. and is worthy of such recognition. That day onwards, my web browsing behaviour has certainly changed.
+Being a technocrat and <a href="https://github.com/softvar" target="blank">open-source enthusiast</a>, I like browsing awesome trending stuff each day on various popular sites like Github, ProductHunt, Dribble, etc. I use <a href="http://usepanda.com/" target="blank">Panda</a> for this. But I have a bad habit of peeping whenever I build something and post it on the above mentioned sites. So, just to prevent opening and viewing stats in window each time, I really appreciate the idea of having the things which require your utmost attention directly into your viewport i.e. Mac OS X menu bar <i class="fa fa-smile-o" style="color:#B9971D"></i>
+
+{%- endmark %}
+
++++++
+</div><div id="bitbar--plugins" class="section scrollspy  push-half--top">
++++++
+
+Needed my own scripts <a href="#bitbar-plugins"><i class="fa fa-link  content-link"></i></a>
+-----------------------
+
+
+I couldn't wait much for the third-party <a href="https://github.com/matryer/bitbar-plugins" target="blank">bitbar-plugins</a> to have support for all my greedy needs. And thus, my thirst landed into coding one for myself.
+Please don't judge me being obsessed with social media hypocrisy ;)
+
+
+1. <b>Stars Count on Github Repositories</b> - It lists all the created Github repositories(not the forked ones) with the stars count just right to it.
+
+2. <b>Votes Count on ProductHunt Post</b> - It lists all the users posts along with the number of votes till now.
+
+
+Scripts for both the plugins also show a notification bell <i class="fa fa-bell" style="color:#FF9245;"></i> in the Mac OS X menu bar itself whenever there's a change in number of stars on any repo and change in votes count on any producthunt post respectively. Crazy, isn't it? :B
+
++++++
+</div><div id="showcase" class="section scrollspy  push-half--top">
++++++
+
+Screenshots <a href="#showcase"><i class="fa fa-link  content-link"></i></a>
+---------
+
+<div style="text-align: center;">
+	<img src="{{ media_url('/images/bitbar-plugin-producthunt-posts-votes-count.png') }}" style="display:inline-block;width:150px;height:600px">
+
+	<img src="{{ media_url('/images/bitbar-plugin-github-repos-stars.png') }}" style="display:inline-block;margin-left:200px;width:150px;height:600px">
+</div>
+<div style="text-align: center;">
+	<span style="margin-right:130px;">ProductHunt Posts' Votes Count</span>
+	<span>Github Repositories' Stars Count</span>
+</div>
+
+
++++++
+</div><div id="script--producthunt" class="section scrollspy  push-half--top">
++++++
+
+
+ProduchHunt Posts' Votes Count Script <a href="#script-producthunt"><i class="fa fa-link  content-link"></i></a>
+---------
+
+<script src="https://gist.github.com/softvar/75e06094cf90617916b1.js"></script>
+
++++++
+</div><div id="script--github" class="section scrollspy  push-half--top">
++++++
+
+Github Repos' Stars Count Script <a href="#script-github"><i class="fa fa-link  content-link"></i></a>
+---------
+
+<script src="https://gist.github.com/softvar/6ae45db55f07636f6a41.js"></script>
