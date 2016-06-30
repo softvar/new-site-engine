@@ -1,49 +1,37 @@
 ---
 extends: base.j2
-
 title: LAB - about.me
 description: It's about me
 ---
-
- {% block css %}
-    {{ super() }}
- {% endblock css %}
-
+{% block css %}
+	{{ super() }}
+{% endblock css %}
 {% block parallax_image %}
-  <div class="parallax-container">
-    <div class="parallax" style="background:#D8C6A4;"><img id="slide-image-1" src="http://d2ed0w4q03gsmw.cloudfront.net/images/logos/aboutme_logo_black.svg"></div>
-    {% block loader %}
-    	{{ super() }}
-    {% endblock loader %}
-  </div>
+	<div class="parallax-container">
+		<div class="parallax" style="background:#D8C6A4;">
+			<div style="text-align: center;font-size: 150px;margin-top: 100px;color: #CE7E2C;">
+				<span>About </span>
+				<span style="color: #9A744D;">me</span>
+			</div>
+		</div>
+		{% block loader %}
+			{{ super() }}
+		{% endblock loader %}
+	</div>
 {% endblock parallax_image %}
-
 {% block main %}
-<div class="about_me">
-<h1 >Hi,</h1>
-
-<p>I figure, if you clicked the About link, you probably want to know a little more than my passion for tech. So here it goes.</p></br>
-
-<p>Professionally, I'm a Software Engineer, currently working in an awesome startup, <a href="https://wingify.com">Wingify</a>, based out of New Delhi, India. I enjoy taking problems and turning them into simple and beautiful interface designs. I <i class="fa fa-heart" style="color:red;font-size:12px;"></i> programming and always strive for the newest technologies. Apart from being a techie geek, you'll find me either on the playing courts or in the gym.</p></br>
-
-
-<h2>About this Site</h2>
-
-<p>This is HYDE generated static HTML site and each web page has been authored in Markdown to avoid hand-authoring HTML. This site uses template language simlar to that of the popular Django framework, implemented through the Jinja2 project for rendering HTML pages into static content. If you look at my weblogs, more than half of the HTML of each page is boilerplate replicated across all entries. A template allows to express that 50 percent of content only once and have it automatically applied to all the pages.</p></br>
-
-<p>HYDE provides beautiful Syntax Highlighting Plugin to post all my code-snippets in web-logs according to the language's taste. It not only makes code-snippets more readable but also helps in understanding the main points being highlighted.</p></br>
-
-<p>I have used the awesome <a href="http://materializecss.com/">Materialize</a> Framework for the front-end designing.</p><br />
-
-<p>In case you love to see the engine behind this site, have a look at my <a href="https://www.github.com/softvar/new-site-engine" style="color:red;">Github repo</a>.
-Contact me by dropping words at <a href="mailto:varun2902@gmail.com" style="color:red;">varun2902@gmail.com</a>, if you have any query.</p></br>
-
-<p>Cheers! <i class="fa  fa-thumbs-up"></i></p></br>
-
-</div>
-
+	<div class="about_me">
+		<h1 >Hi,</h1>
+		<p>I figure, if you clicked the About link, you probably want to know a little more than my passion for tech. So here it goes.</p></br>
+		<p>Professionally, I'm a Software Engineer, currently working in an awesome startup, <a href="https://wingify.com">Wingify</a>, based out of New Delhi, India. I enjoy taking problems and turning them into simple and beautiful interface designs. I <i class="fa fa-heart" style="color:red;font-size:12px;"></i> programming and always strive for the newest technologies. Lately, I have developed a new hobby of learning human mind which in turn helps me in knowing more about <span class="tech-specs">#MachineLearning</span>. Apart from being a techie geek, you'll find me either on the playing courts or in the gym.</p></br>
+		<h2>About this Site</h2>
+		<p>This is HYDE generated static HTML site and each web page has been authored in Markdown to avoid hand-authoring HTML. This site uses template language simlar to that of the popular Django framework, implemented through the Jinja2 project for rendering HTML pages into static content. If you look at my weblogs, more than half of the HTML of each page is boilerplate replicated across all entries. A template allows to express that 50 percent of content only once and have it automatically applied to all the pages.</p></br>
+		<p>HYDE provides beautiful Syntax Highlighting Plugin to post all my code-snippets in web-logs according to the language's taste. It not only makes code-snippets more readable but also helps in understanding the main points being highlighted.</p></br>
+		<p>I have used the awesome <a href="http://materializecss.com/">Materialize</a> Framework for the front-end designing.</p><br />
+		<p>In case you love to see the engine behind this site, have a look at my <a href="https://www.github.com/softvar/new-site-engine" style="color:red;">Github repo</a>.
+		Contact me by dropping words at <a href="mailto:varun2902@gmail.com" style="color:red;">varun2902@gmail.com</a>, if you have any query.</p></br>
+		<p>Cheers! <i class="fa  fa-thumbs-up"></i></p></br>
+	</div>
 {% endblock main %}
-
 {% block jquery %}
 {% endblock jquery %}
-

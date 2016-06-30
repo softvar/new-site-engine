@@ -1,73 +1,60 @@
 ---
 extends: base.j2
-
 title: Varun - Contact
 description: Find me on social networking sites, send me an email
 ---
-
- {% block css %}
-    {{ super() }}
- {% endblock css %}
-
+{% block css %}
+  {{ super() }}
+{% endblock css %}
 {% block topbarSocialLinks %}
 {% endblock %}
-
 {% block parallax_image %}
   <div class="parallax-container">
     <div class="parallax"><img id="slide-image-1" src="{{ media_url('/img/main__site_1.jpg') }}"></div>
     {% block loader %}
-    	{{ super() }}
+      {{ super() }}
     {% endblock loader %}
   </div>
 {% endblock parallax_image %}
-
 {% block main %}
-
-<h1 style="text-align:center;color:#666;">Varun Malhotra</h1>
-<div  style="text-align:center;margin-bottom:5px;">
-  <a href="http://twitter.com/s0ftvar" target="_blank" class="tooltipped" data-position="bottom" data-tooltip="My tweets"><i class="fa  fa-twitter  fa-4x" style="color:#52C7FF;"></i></a>
-  <a href="https://www.linkedin.com/in/softvar" target="_blank" class="tooltipped  push--left" data-position="bottom" data-tooltip="Professional Portfolio"><i class="fa  fa-linkedin  fa-4x" style="color:#65B7D2;"></i></a>
-  <a href="http://github.com/softvar" target="_blank" class="tooltipped  push--left" data-position="bottom" data-tooltip="Hands on code"><i class="fa  fa-github  fa-4x" style="color:#333333;"></i></a>
-  <a href="http://stackoverflow.com/users/2494535/varun-malhotra" target="_blank" class="tooltipped  push--left" data-position="bottom" data-tooltip="My learning and Sharing"><i class="fa  fa-stack-overflow  fa-4x" style="color:#FF8A1B;"></i></a>
-  <a href="mailto:varun2902@gmail.com" class="tooltipped  push--left" data-position="bottom" data-tooltip="Send me an email"><i class="fa  fa-envelope  fa-4x" style="color:#EF5350;"></i></a>
-</div>
-<!-- <div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s9">
-      	<i class="mdi-action-account-circle prefix"></i>
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
-		<a href="" class="btn  waves-effect  waves-light  submit-form  text--center" style="display:none">Subscribe</a>
+  <h1 style="text-align:center;color:#666;">Varun Malhotra</h1>
+  <div  style="text-align:center;margin-bottom:5px;">
+    <a href="http://twitter.com/s0ftvar" target="_blank" class="tooltipped" data-position="bottom" data-tooltip="My tweets"><i class="fa  fa-twitter  fa-4x" style="color:#52C7FF;"></i></a>
+    <a href="https://www.linkedin.com/in/softvar" target="_blank" class="tooltipped  push--left" data-position="bottom" data-tooltip="Professional Portfolio"><i class="fa  fa-linkedin  fa-4x" style="color:#65B7D2;"></i></a>
+    <a href="http://github.com/softvar" target="_blank" class="tooltipped  push--left" data-position="bottom" data-tooltip="Hands on code"><i class="fa  fa-github  fa-4x" style="color:#333333;"></i></a>
+    <a href="http://stackoverflow.com/users/2494535/varun-malhotra" target="_blank" class="tooltipped  push--left" data-position="bottom" data-tooltip="My learning and Sharing"><i class="fa  fa-stack-overflow  fa-4x" style="color:#FF8A1B;"></i></a>
+    <a href="mailto:varun2902@gmail.com" class="tooltipped  push--left" data-position="bottom" data-tooltip="Send me an email"><i class="fa  fa-envelope  fa-4x" style="color:#EF5350;"></i></a>
+  </div>
+  <!-- <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s9">
+            <i class="mdi-action-account-circle prefix"></i>
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+              <a href="" class="btn  waves-effect  waves-light  submit-form  text--center" style="display:none">Subscribe</a>
+        </div>
       </div>
-    </div>
-  </form>
-</div> -->
-
+    </form>
+  </div> -->
 {% endblock main %}
-
-
-
 {% block jquery %}
 {% endblock jquery %}
-
 {% block scripts %}
-
 {% endblock scripts %}
-
 {% block specialScripts %}
-    <script>
-      $(document).ready(function() {
-        setTimeout(function () {
-          $('.loader').css({'display':'none'});
-        }, 1200);
-      	$('.slider').slider({height: 210, indicators: false, transition: 2000, interval: 3000});
-      	$('.tooltipped').tooltip({"delay": 50});
-      	$('.parallax').parallax();
-        $('#sidebar-nav').sidr();
-        $('body').on('click', '.all-body-click-region', function() {
-          $.sidr('close');
-        });
-      });
-    </script>
-  {% endblock specialScripts %}
+  <script>
+  $(document).ready(function() {
+  setTimeout(function () {
+  $('.loader').css({'display':'none'});
+  }, 1200);
+    $('.slider').slider({height: 210, indicators: false, transition: 2000, interval: 3000});
+    $('.tooltipped').tooltip({"delay": 50});
+    $('.parallax').parallax();
+  $('#sidebar-nav').sidr();
+  $('body').on('click', '.all-body-click-region', function() {
+  $.sidr('close');
+  });
+  });
+  </script>
+{% endblock specialScripts %}
